@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residencia de Lujo en Venta — Playacar, Playa del Carmen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- ============================================================
+     🎨 ESTILOS CSS — Colores, fuentes y diseño general
+     Si quieres cambiar colores, busca la sección :root abajo
+     ============================================================ -->
+<style>
+  /* 🎨 PALETA DE COLORES — Cambia aquí para cambiar todo el sitio */
+  :root {
+    --cream: #f5f0e8;
+    --sand: #e8dcc8;
+    --terracotta: #c4693c;
+    --deep: #1a1710;
+    --gold: #b8952a;
+    --white: #ffffff;
+    --gray: #888880;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--deep); font-family: 'Jost', sans-serif; font-weight:300; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 18px 8%;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(26,23,16,0.65); backdrop-filter: blur(12px);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--white); letter-spacing: 2px; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* COVER */
+  .cover { position: relative; height: 100vh; min-height: 620px; overflow: hidden; display: flex; align-items: flex-end; }
+  .cover-bg { position: absolute; inset: 0; background-image: url("img/portada_aerea.jpeg"); background-size: cover; background-position: center; filter: brightness(0.72); }
+  .cover-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,23,16,0.9) 0%, rgba(26,23,16,0.05) 55%, transparent 100%); }
+  .cover-content { position: relative; z-index:2; padding: 64px 8%; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .cover-tag { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; border: 2px solid #ffffff; background: rgba(0,0,0,0.55); padding: 10px 20px; margin-bottom: 24px; font-weight: 500; }
+  .cover-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 6vw, 84px); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 10px; }
+  .cover-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.5vw, 28px); color: var(--sand); margin-bottom: 32px; }
+  .cover-price { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; opacity: 1; text-shadow: 0 1px 6px rgba(0,0,0,0.8); }
+  .cover-price span { color: #f0c040; font-size: 28px; letter-spacing: 1px; font-family: 'Cormorant Garamond', serif; text-shadow: 0 2px 8px rgba(0,0,0,0.9); font-weight: 600; }
+
+  /* ADDRESS BAR */
+  .address-bar { background: var(--terracotta); padding: 18px 8%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .address-bar span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.92); }
+
+  /* SECTIONS */
+  section { padding: 88px 8%; }
+  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 54px); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
+  .divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 32px; }
+
+  /* OVERVIEW */
+  .overview { background: var(--white); }
+  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+  .overview-text p { font-size: 15px; line-height: 1.95; color: #555; margin-bottom: 20px; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--sand); }
+  .stat-item { background: var(--cream); padding: 28px 20px; text-align: center; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--terracotta); line-height:1; margin-bottom: 6px; }
+  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+
+  /* PHOTO STRIP — 4 photos */
+  .photo-strip { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 3px; height: 480px; overflow: hidden; background: #000; }
+  .photo-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display:block; }
+  .photo-strip img:hover { transform: scale(1.05); }
+
+  /* POOL */
+  .pool-section { background: var(--deep); padding: 0; }
+  .pool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; height: 560px; }
+  .pool-grid img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.6s; }
+  .pool-grid img:hover { transform:scale(1.03); }
+  .pool-text { display:flex; flex-direction:column; justify-content:center; padding: 64px 72px; background: var(--deep); }
+  .pool-text .section-label { color: var(--gold); }
+  .pool-text .section-title { color: var(--white); }
+  .pool-text .divider { background: var(--terracotta); }
+  .pool-text p { color: rgba(255,255,255,0.65); font-size:15px; line-height:1.85; }
+
+  /* BEDROOMS */
+
+  .bedroom-panel { display: none; }
+  .bedroom-panel.active {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3px;
+  }
+  .bedroom-panel-main-img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    height: 640px;
+    overflow: hidden;
+  }
+  .bedroom-panel-main-img img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .bedroom-panel-col {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px;
+    height: 420px;
+    overflow: hidden;
+  }
+  .bedroom-panel-col img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .bedroom-info {
+    grid-column: 2;
+    grid-row: 2;
+    background: var(--white);
+    padding: 28px 32px;
+    display: flex; flex-direction: column; justify-content: center;
+    height: 220px;
+    overflow: hidden;
+  }
+  .bedroom-info h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; margin-bottom:10px; }
+  .bedroom-info p { font-size:13px; line-height:1.75; color:#666; }
+.bedroom-tabs { display:flex; gap:2px; margin-bottom:3px; flex-wrap:wrap; }
+.bedroom-tab { flex:1; min-width:140px; padding: 18px 24px; background: var(--sand); cursor:pointer; transition: background 0.3s; font-size:11px; letter-spacing:2px; text-transform:uppercase; color: var(--gray); border:none; font-family:'Jost',sans-serif; }
+.bedroom-tab.active { background: var(--terracotta); color: var(--white); }
+.bedroom-tab:hover:not(.active) { background: #d8cebb; }
+
+  /* AMENITIES */
+  .amenities { background: var(--sand); }
+  .amenities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top:48px; background: rgba(0,0,0,0.08); }
+  .amenity-item { background: var(--cream); padding: 36px 28px; display:flex; align-items:flex-start; gap:18px; }
+  .amenity-icon { font-size:26px; flex-shrink:0; margin-top:3px; }
+  .amenity-title { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color: var(--terracotta); margin-bottom:8px; font-weight:500; }
+  .amenity-desc { font-size:14px; color:#666; line-height:1.75; }
+
+  /* LOCATION */
+  .location { background: var(--white); }
+  .location-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .location-items { list-style:none; }
+  .location-item { display:flex; align-items:flex-start; gap:20px; padding:20px 0; border-bottom:1px solid var(--sand); }
+  .location-item:last-child { border-bottom:none; }
+  .location-dist { font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--terracotta); flex-shrink:0; width:70px; line-height:1; }
+  .location-name { font-size:13px; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; font-weight:500; }
+  .location-desc { font-size:13px; color:var(--gray); }
+  .map-embed { width:100%; height:420px; border:none; display:block; }
+
+  /* GALLERY MOSAIC */
+  .gallery { background: var(--deep); padding: 0; }
+  .mosaic { display:grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(2,300px); gap:3px; }
+  .mosaic img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
+  .mosaic img:hover { transform:scale(1.04); }
+  .mosaic .span2 { grid-column: span 2; }
+
+  /* CONTACT */
+  .contact { background: var(--deep); color: var(--white); text-align:center; padding: 100px 8%; }
+  .contact .section-label { color: var(--gold); }
+  .contact .section-title { color: var(--white); }
+  .contact .divider { margin: 0 auto 48px; }
+  .contact-price { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,5vw,68px); color:var(--gold); margin-bottom:8px; }
+  .contact-price-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:56px; }
+  .contact-box { display:inline-block; border:1px solid rgba(255,255,255,0.12); padding:48px 64px; min-width:380px; margin-bottom:40px; }
+  .contact-name { font-family:'Cormorant Garamond',serif; font-size:30px; margin-bottom:4px; }
+  .contact-role { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:32px; }
+  .contact-field { font-size:14px; color:rgba(255,255,255,0.45); margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1); }
+  .contact-cta { display:inline-block; margin-top:24px; padding:15px 52px; background:var(--terracotta); color:var(--white); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-family:'Jost',sans-serif; transition:background 0.3s; }
+  .contact-cta:hover { background:var(--gold); }
+
+  @media (max-width:768px) {
+    .overview-grid, .location-grid, .pool-grid { grid-template-columns:1fr; gap:40px; height:auto; }
+    .pool-grid img { height:300px; }
+    .amenities-grid { grid-template-columns:1fr; }
+    .photo-strip { grid-template-columns:1fr 1fr; height:360px; }
+    .bedroom-panel.active { grid-template-columns:1fr; height:auto; }
+    .mosaic { grid-template-columns:1fr 1fr; grid-template-rows:repeat(3,200px); }
+    .nav-links { display:none; }
+    .contact-box { min-width:unset; padding:32px 24px; }
+  }
+
+  /* 📸 PLACEHOLDER — Se muestra cuando la imagen no está cargada */
+  img {
+    background: #e8dcc8;
+    min-height: 80px;
+  }
+  img::before {
+    content: attr(alt);
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 12px;
+    font-family: 'Jost', sans-serif;
+  }
+
+</style>
+</head>
+<body>
+
+
+<!-- ============================================================
+     🔝 BARRA DE NAVEGACIÓN — Links del menú superior
+     Puedes cambiar los nombres de los links o quitarlos
+     ============================================================ -->
+
+<!-- 
+=================================================================
+📁 GUÍA DE IMÁGENES — Crea una carpeta llamada "img" junto a este 
+archivo HTML y agrega las siguientes fotos con estos nombres exactos:
+
+PORTADA:
+  img/portada_aerea.jpg         → Foto aérea frontal de la propiedad
+
+TIRA DE FOTOS (4 fotos horizontales):
+  img/alberca_deck_1.jpg        → Foto de la alberca con camastros
+  img/recamara1_cama.jpg        → Cama recámara 1
+  img/recamara3_loft.jpg        → Vista del loft recámara 3
+  img/terraza_jardinera.jpg     → Terraza con jardinera
+
+SECCIÓN ALBERCA:
+  img/alberca_deck_2.jpg        → Alberca con vista del jardín
+
+RECÁMARAS (tabs):
+  img/suite1_cama.jpg           → Suite 1: foto principal cama
+  img/suite1_detalle.jpg        → Suite 1: detalle baño/sala
+  img/suite2_vista_loft.jpg     → Suite 2: vista desde el loft
+  img/suite2_detalle.jpg        → Suite 2: cocina/sala
+  img/suite3_cama.jpg           → Suite 3: cama loft
+  img/suite3_sala.jpg           → Suite 3: sala/cocina
+  img/suite4_cama.jpg           → Suite 4: cama planta baja
+  img/suite4_detalle.jpg        → Suite 4: detalle
+  img/suite5_cama.jpg           → Suite 5: cama planta baja
+  img/suite5_bano.jpg           → Suite 5: baño
+
+GALERÍA MOSAICO:
+  img/galeria_alberca.jpg       → Alberca (foto grande, ocupa 2 columnas)
+  img/galeria_bano1.jpg         → Baño Talavera
+  img/galeria_bano2.jpg         → Baño moderno
+  img/galeria_escalera.jpg      → Escalera loft
+  img/galeria_loft.jpg          → Vista desde loft
+  img/galeria_aerea.jpg         → Foto aérea exterior (foto grande, 2 columnas)
+
+CONSEJO: Puedes usar los mismos nombres de tus archivos originales,
+solo renómbralos como aparece arriba y ponlos en la carpeta img/
+=================================================================
+-->
+
+<nav>
+  <div class="nav-logo">PLAYACAR ESTATE</div>
+  <div class="nav-links">
+    <a href="#overview">Descripción</a>
+    <a href="#pool">Alberca</a>
+    <a href="#bedrooms">Recámaras</a>
+    <a href="#amenities">Amenidades</a>
+    <a href="#location">Ubicación</a>
+    <a href="#contact">Contacto</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     🏠 PORTADA — Sección principal (hero)
+     CAMBIAR: título, subtítulo, precio, dirección
+     La foto de fondo se cambia en CSS: .cover-bg { background-image }
+     ============================================================ -->
+<section class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <div class="cover-tag">En Venta &nbsp;|&nbsp; Playacar, Playa del Carmen</div>
+    <h1 class="cover-title">Residencia de Lujo<br><em>Playacar Estate</em></h1>
+    <p class="cover-subtitle">Av. Xaman Ha 16 · Playacar, Playa del Carmen, Q.Roo</p>
+    <p class="cover-price">Precio de Venta &nbsp;&nbsp;<span>USD $1,850,000</span></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     📍 BARRA DE DIRECCIÓN — Franja terracotta debajo de la portada
+     CAMBIAR: dirección, tipo de comunidad, amenidades destacadas
+     ============================================================ -->
+<div class="address-bar">
+  <span>📍 Playacar, Playa del Carmen</span>
+  <span>🔒 Fraccionamiento Privado con Seguridad 24/7</span>
+  <span>⛳ Campo de Golf · Club de Playa Privado</span>
+  <span>🚗 Estacionamiento para 4 Autos</span>
+</div>
+
+<!-- ============================================================
+     📋 DESCRIPCIÓN GENERAL — Texto introductorio + estadísticas
+     CAMBIAR: párrafos descriptivos y números de las estadísticas
+     ============================================================ -->
+<section class="overview" id="overview">
+  <div class="overview-grid">
+    <div class="overview-text">
+      <p class="section-label">Descripción General</p>
+      <h2 class="section-title">Una Oportunidad Única<br><em>en el Corazón de Playacar</em></h2>
+      <div class="divider"></div>
+      <p>Esta excepcional residencia multi-suite se encuentra en Playacar — el fraccionamiento más prestigioso de Playa del Carmen, hogar de hoteles de clase mundial, campo de golf campeonato y acceso directo a la costa del Caribe.</p>
+      <p>Con 330 m² de superficie habitable distribuidos en 5 suites independientes, cada una con baño privado, cocina y área de comedor, esta propiedad ofrece un potencial de renta excepcional o una gran residencia familiar. Cuenta además con paneles solares instalados.</p>
+    </div>
+    <div>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Suites</div></div>
+        <div class="stat-item"><div class="stat-num">330</div><div class="stat-label">m² Sup. Suite</div></div>
+        <div class="stat-item"><div class="stat-num">445</div><div class="stat-label">m² de Terreno</div></div>
+        <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Estacionamientos</div></div>
+        <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Suites con Loft</div></div>
+        <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Suites Planta Baja</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     📸 TIRA DE FOTOS — 4 fotos horizontales
+     CAMBIAR: reemplaza los src="..." con las rutas de tus fotos
+     Si subes a Netlify, pon las fotos en una carpeta /fotos/
+     y cambia src a: src="fotos/tu_foto.jpg"
+     ============================================================ -->
+<div class="photo-strip">
+  <img src="img/alberca-deeck-1.jpeg" alt="Pool and deck">
+  <img src="img/suite-5-planta-baja-view.jpeg" alt="Bedroom suite">
+  <img src="img/habitacion-2-loft.jpeg" alt="Loft bedroom">
+  <img src="img/terraza-jardinera.jpeg" alt="Planted terrace border">
+</div>
+
+<!-- ============================================================
+     🏊 ALBERCA Y EXTERIORES — Sección con foto grande + texto
+     CAMBIAR: foto de alberca (src) y texto descriptivo
+     ============================================================ -->
+<section class="pool-section" id="pool" style="padding:0;">
+  <div class="pool-grid">
+    <img src="img/alberca-deck-2.jpeg" alt="Pool with loungers and garden">
+    <div class="pool-text">
+      <p class="section-label">Alberca y Exteriores</p>
+      <h2 class="section-title">Alberca Privada<br><em>y Terraza Deck</em></h2>
+      <div class="divider"></div>
+      <p>Una hermosa alberca privada rodeada de un amplio deck con camastros, áreas de descanso y exuberantes jardines tropicales. El escenario perfecto para disfrutar el clima de la Riviera Maya todo el año.</p>
+      <br>
+      <p style="color:rgba(255,255,255,0.45); font-size:13px; letter-spacing:1px;">Alberca privada · Deck amplio · Área de descanso · Jardineras tropicales</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🛏️ RECÁMARAS — Tabs interactivos para cada suite
+     CAMBIAR: nombres de tabs, fotos (src) y descripciones
+     Para agregar/quitar suites: duplica o elimina un bloque
+     <div class="bedroom-panel"> ... </div>
+     ============================================================ -->
+<section class="bedrooms" id="bedrooms">
+  <p class="section-label">Recámaras</p>
+  <h2 class="section-title">Cinco Suites Independientes</h2>
+  <div class="divider"></div>
+  <p style="max-width:700px; font-size:15px; line-height:1.85; color:#666; margin-bottom:40px;">Cada suite cuenta con baño privado, cocina equipada, área de comedor y personalidad única. Tres tienen nivel loft privado; dos están en planta baja con acceso a terraza. Todas con A/C y decoración artesanal mexicana.</p>
+
+  <div class="bedroom-tabs">
+    <button class="bedroom-tab active" onclick="showBedroom(0, this)">Suite 1 · Loft</button>
+    <button class="bedroom-tab" onclick="showBedroom(1, this)">Suite 2 · Loft</button>
+    <button class="bedroom-tab" onclick="showBedroom(2, this)">Suite 3 · Loft</button>
+    <button class="bedroom-tab" onclick="showBedroom(3, this)">Suite 4 · Loft</button>
+    <button class="bedroom-tab" onclick="showBedroom(4, this)">Suite 5 · Ground</button>
+    <button class="bedroom-tab" onclick="showBedroom(5, this)">Suite 6 · Ground</button>
+  </div>
+
+  <div class="bedroom-panels">
+    <div class="bedroom-panel active">
+      <div class="bedroom-panel-main-img">
+        <img src="img/suite-1-loft-bedroom.jpeg" alt="Suite 1 - foto principal">
+      </div>
+      <div class="bedroom-panel-col">
+        <img src="img/suite-1-loft-kitchen.jpeg" alt="Suite 1 - foto 2">
+        <img src="img/suite-1-loft-ground-view.jpeg" alt="Suite 1 - foto 3">
+        <img src="img/suite-1-loft-shower.jpeg" alt="Suite 1 - foto 4">
+        <img src="img/terraza-jardinera.jpeg" alt="Suite 1 - foto 5">
+      </div>
+      <div class="bedroom-info">
+        <h3>Suite 1 · Loft</h3>
+        <p>Recámara doble en nivel loft con baño privado de lavabo Talavera pintado a mano, cocina con comedor en la planta baja y vistas directas al jardín.</p>
+      </div>
+    </div>
+    <div class="bedroom-panel">
+      <div class="bedroom-panel-main-img">
+        <img src="img/suite-2-loft-bedroom.jpeg" alt="Suite 2 - foto principal">
+      </div>
+      <div class="bedroom-panel-col">
+        <img src="img/suite-2-dinning-living-room.jpeg" alt="Suite 2 - foto 2">
+        <img src="img/suite-2-loft-dinning-living-room-view.jpeg" alt="Suite 2 - foto 3">
+        <img src="img/suite-2-loft-sofa-cama.jpeg" alt="Suite 2 - foto 4">
+        <img src="img/terraza-jardinera.jpeg" alt="Suite 2 - foto 5">
+      </div>
+      <div class="bedroom-info">
+        <h3>Suite 2 · Loft</h3>
+        <p>Amplia suite loft con vibrante decoración artesanal mexicana, cocina privada, comedor y escalera de hierro que conduce al loft con baño privado.</p>
+      </div>
+    </div>
+    <div class="bedroom-panel">
+      <div class="bedroom-panel-main-img">
+        <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto principal">
+      </div>
+      <div class="bedroom-panel-col">
+        <img src="img/suite-3-loft-bedroom.jpeg" alt="Suite 3 - foto 2">
+        <img src="img/suite-3-loft-down-view.jpeg" alt="Suite 3 - foto 3">
+        <img src="img/suite-3-kitchenet-view.jpeg" alt="Suite 3 - foto 4">
+        <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto 5">
+      </div>
+      <div class="bedroom-info">
+        <h3>Suite 3 · Loft</h3>
+        <p>Luminosa suite loft con vistas al jardín tropical a través de una puerta corrediza. Cuenta con muebles de madera tallada y coloridos textiles artesanales.</p>
+      </div>
+    </div>
+    <div class="bedroom-panel">
+  <div class="bedroom-panel-main-img">
+    <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto principal">
+  </div>
+  <div class="bedroom-panel-col">
+    <img src="img/suite-4-loft-dinning-kitchen.jpeg" alt="Suite 4 - foto 2">
+    <img src="img/suite-4-loft-kitchen view.jpeg" alt="Suite 4 - foto 3">
+    <img src="img/suite-4-loft-down-view.jpeg" alt="Suite 4 - foto 4">
+    <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto 5">
+  </div>
+  <div class="bedroom-info">
+    <h3>Suite 4 · Loft</h3>
+    <p>Suite en segunda planta con llamativa cabecera fucsia...</p>
+  </div>
+</div>
+  <div class="bedroom-panel">
+  <div class="bedroom-panel-main-img">
+    <img src="img/suite-5-planta-baja-bed-view.jpeg" alt="Suite 5 - foto principal">
+  </div>
+  <div class="bedroom-panel-col">
+    <img src="img/suite-5-planta-baja-comedor-view.jpeg" alt="Suite 5 - foto 2">
+    <img src="img/suite-5-planta-baja-bathroom.jpeg" alt="Suite 5 - foto 3">
+    <img src="img/suite-5-planta-baja-view.jpeg" alt="Suite 5 - foto 4">
+    <img src="img/suite-5-planta-baja-bed.jpeg" alt="Suite 5 - foto 5">
+  </div>
+  <div class="bedroom-info">
+    <h3>Suite 5 · Planta Baja</h3>
+    <p>Suite en planta baja con llamativa cabecera fucsia...</p>
+  </div>
+</div>
+<div class="bedroom-panel">
+  <div class="bedroom-panel-main-img">
+    <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto principal">
+  </div>
+  <div class="bedroom-panel-col">
+    <img src="img/suite-6-planta-baja-bathroom.jpeg" alt="Suite 6 - foto 2">
+    <img src="img/suite-6-planta-baja-kitchenet-view.jpeg" alt="Suite 6 - foto 3">
+    <img src="img/suite-6-planta-baja-bed.jpeg" alt="Suite 6 - foto 4">
+    <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto 5">
+  </div>
+  <div class="bedroom-info">
+    <h3>Suite 6 · Planta Baja</h3>
+    <p>Suite en planta baja con llamativa cabecera fucsia...</p>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     🖼️ GALERÍA MOSAICO — Grid de fotos decorativo
+     CAMBIAR: reemplaza los src="..." con tus mejores fotos
+     Las fotos con class="span2" ocupan el doble de ancho
+     ============================================================ -->
+<div class="gallery">
+  <div class="mosaic">
+    <img class="span2" src="img/alberca-deeck-1.jpeg" alt="Pool area">
+    <img src="img/suite-1-loft-bathroom.jpeg" alt="Bathroom detail">
+    <img src="img/suite-5-planta-baja-bathroom.jpeg" alt="Bathroom 2">
+    <img src="img/suite-1-loft-ground-view.jpeg" alt="Loft staircase">
+    <img src="img/suite-2-loft-dinning-living-room-view.jpeg" alt="Loft view">
+    <img class="span2" src="img/foto-aerea-frontal.jpeg" alt="Aerial exterior">
+  </div>
+</div>
+
+<!-- ============================================================
+     ✨ AMENIDADES — Iconos con descripción de características
+     CAMBIAR: icono (emoji), título y descripción de cada amenidad
+     Para agregar más: copia un bloque <div class="amenity-item">
+     ============================================================ -->
+<section class="amenities" id="amenities">
+  <p class="section-label">Amenidades</p>
+  <h2 class="section-title">Lujo sin Compromisos</h2>
+  <div class="divider"></div>
+  <div class="amenities-grid">
+    <div class="amenity-item">
+      <div class="amenity-icon">🔒</div>
+      <div>
+        <div class="amenity-title">Seguridad 24/7</div>
+        <div class="amenity-desc">Playacar es un fraccionamiento de lujo totalmente cerrado con acceso controlado y seguridad 24/7 — hogar de los mejores hoteles resort de Playa del Carmen.</div>
+      </div>
+    </div>
+    <div class="amenity-item">
+      <div class="amenity-icon">⛳</div>
+      <div>
+        <div class="amenity-title">Campo de Golf · Campo de Golf</div>
+        <div class="amenity-desc">Campo de golf campeonato dentro del desarrollo, disponible exclusivamente para residentes y huéspedes de Playacar.</div>
+      </div>
+    </div>
+    <div class="amenity-item">
+      <div class="amenity-icon">🏖️</div>
+      <div>
+        <div class="amenity-title">Club de Playa Privado</div>
+        <div class="amenity-desc">Los propietarios disfrutan acceso exclusivo al Club de Playa de Playacar en el Caribe — a solo 5 minutos caminando de la propiedad.</div>
+      </div>
+    </div>
+    <div class="amenity-item">
+      <div class="amenity-icon">☀️</div>
+      <div>
+        <div class="amenity-title">Paneles Solares</div>
+        <div class="amenity-desc">La propiedad incluye paneles solares instalados, reduciendo significativamente los costos de energía y mejorando la sustentabilidad.</div>
+      </div>
+    </div>
+    <div class="amenity-item">
+      <div class="amenity-icon">🚗</div>
+      <div>
+        <div class="amenity-title">Estacionamiento para 4 Autos</div>
+        <div class="amenity-desc">Estacionamiento privado para hasta 4 vehículos dentro de la propiedad.</div>
+      </div>
+    </div>
+    <div class="amenity-item">
+      <div class="amenity-icon">🛣️</div>
+      <div>
+        <div class="amenity-title">Carretera Cancún–Tulum</div>
+        <div class="amenity-desc">Acceso directo a la carretera federal Cancún–Tulum — conectándote con todo el corredor de la Riviera Maya.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     📍 UBICACIÓN — Texto con distancias + mapa de Google
+     CAMBIAR: distancias y descripciones en la lista
+     MAPA: el iframe de Google Maps no carga en local,
+     pero sí funciona cuando subas el archivo a Netlify/GitHub.
+     Para personalizar el mapa, genera tu embed en:
+     maps.google.com → Compartir → Insertar mapa
+     ============================================================ -->
+<section class="location" id="location">
+  <div class="location-grid">
+    <div>
+      <p class="section-label">Ubicación</p>
+      <h2 class="section-title">Ubicación Privilegiada</h2>
+      <div class="divider"></div>
+      <ul class="location-items">
+        <li class="location-item">
+          <div class="location-dist">5'</div>
+          <div><div class="location-name">Beach · Playa Caribe</div><div class="location-desc">A pasos del Mar Caribe / A pasos del mar Caribe</div></div>
+        </li>
+        <li class="location-item">
+          <div class="location-dist">10'</div>
+          <div><div class="location-name">La Quinta Avenida</div><div class="location-desc">Shopping, dining & nightlife — Playa del Carmen's iconic pedestrian strip</div></div>
+        </li>
+        <li class="location-item">
+          <div class="location-dist">⛳</div>
+          <div><div class="location-name">Campo de Golf · Campo de Golf</div><div class="location-desc">Campo campeonato dentro del desarrollo Playacar</div></div>
+        </li>
+        <li class="location-item">
+          <div class="location-dist">🏖️</div>
+          <div><div class="location-name">Playacar Beach Club</div><div class="location-desc">Acceso exclusivo al club de playa privado del Caribe</div></div>
+        </li>
+        <li class="location-item">
+          <div class="location-dist">🛣️</div>
+          <div><div class="location-name">Carretera Cancún–Tulum</div><div class="location-desc">Direct highway access from the development</div></div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.0!2d-87.0819!3d20.6129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4327b4d2f7f5%3A0x0!2sAv+Xaman+Ha+16%2C+Playacar%2C+Playa+del+Carmen!5e0!3m2!1sen!2smx!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     📞 CONTACTO — Página final con precio y datos del agente
+     CAMBIAR: precio, nombre del agente, teléfono, email, web
+     El botón "Agendar Visita" puedes linkear a WhatsApp así:
+     href="https://wa.me/521TUNUMERO"
+     ============================================================ -->
+<section class="contact" id="contact">
+  <p class="section-label">Contacto</p>
+  <h2 class="section-title">Agenda una Visita Privada</h2>
+  <div class="divider"></div>
+  <div class="contact-price">USD $1,850,000</div>
+  <p class="contact-price-label">Precio de Venta</p>
+  <div class="contact-box">
+    <div class="contact-name">[Agent Name]</div>
+    <div class="contact-role">Asesor Inmobiliario</div>
+    <div class="contact-field">📞 &nbsp;[Phone Number]</div>
+    <div class="contact-field">✉️ &nbsp;[Email Address]</div>
+    <div class="contact-field" style="border-bottom:none; margin-bottom:0;">🌐 &nbsp;[Website]</div>
+  </div>
+  <br>
+  <a class="contact-cta" href="#">Agendar una Visita</a>
+</section>
+
+<!-- ============================================================
+     🔻 FOOTER — Barra inferior con dirección y derechos
+     CAMBIAR: dirección y texto de derechos reservados
+     ============================================================ -->
+<div style="background:#0f0e0b; padding:22px 8%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid rgba(255,255,255,0.06);">
+  <span style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.25);">Playacar Estate · Av. Xaman Ha 16 · Playa del Carmen, Quintana Roo, México</span>
+  <span style="font-size:10px; color:rgba(255,255,255,0.15);">Todos los derechos reservados</span>
+</div>
+
+
+<!-- ============================================================
+     ⚙️ JAVASCRIPT — Lógica de los tabs de recámaras
+     No necesitas cambiar nada aquí a menos que agregues
+     o quites suites en la sección de recámaras
+     ============================================================ -->
+<script>
+function showBedroom(index, btn) {
+  document.querySelectorAll('.bedroom-panel').forEach((p,i) => p.classList.toggle('active', i === index));
+  document.querySelectorAll('.bedroom-tab').forEach((t,i) => t.classList.toggle('active', i === index));
+}
+</script>
+</body>
+</html>
