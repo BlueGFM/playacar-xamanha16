@@ -196,6 +196,53 @@
     font-family: 'Jost', sans-serif;
   }
 
+  /* ⛳ CARRUSEL GOLF */
+.golf-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.golf-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.golf-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.golf-slide.active {
+  display: block;
+}
+.golf-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.golf-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.golf-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.golf-dot.active {
+  background: #ffffff;
+}
+
 </style>
 </head>
 <body>
@@ -252,7 +299,7 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
   <div class="nav-logo">PLAYACAR ESTATE</div>
   <div class="nav-links">
     <a href="#overview">Description</a>
-    <!--<a href="#pool">Pool</a> -->
+    <a href="#pool">Golf Course</a>
     <a href="#bedrooms">Rooms</a>
     <a href="#amenities">Amenities</a>
     <a href="#location">Location</a>
@@ -327,23 +374,46 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
   <img src="img/terraza-jardinera.jpeg" alt="Planted terrace border">
 </div>
 
-<!-- ============================================================
-     🏊 ALBERCA Y EXTERIORES — Sección con foto grande + texto
+ <!--============================================================
+     🏊 GOLF COURT — Sección con foto grande + texto
      CAMBIAR: foto de alberca (src) y texto descriptivo
-     ============================================================ 
+     ============================================================ -->
 <section class="pool-section" id="pool" style="padding:0;">
   <div class="pool-grid">
-    <img src="img/alberca-deck-2.jpeg" alt="Pool with loungers and garden">
-    <div class="pool-text">
-      <p class="section-label">Alberca y Exteriores</p>
-      <h2 class="section-title">Alberca Privada<br><em>y Terraza Deck</em></h2>
-      <div class="divider"></div>
-      <p>Una hermosa alberca privada rodeada de un amplio deck con camastros, áreas de descanso y exuberantes jardines tropicales. El escenario perfecto para disfrutar el clima de la Riviera Maya todo el año.</p>
-      <br>
-      <p style="color:rgba(255,255,255,0.45); font-size:13px; letter-spacing:1px;">Alberca privada · Deck amplio · Área de descanso · Jardineras tropicales</p>
+    <!-- CARRUSEL GOLF -->
+<div class="golf-carousel">
+  <div class="golf-slides">
+    <div class="golf-slide active">
+      <img src="img/golf_foto1.jpg" alt="Playacar Golf Course - hole 1">
+    </div>
+    <div class="golf-slide">
+      <img src="img/golf_foto2.jpg" alt="Playacar Golf Course - hole 2">
+    </div>
+    <div class="golf-slide">
+      <img src="img/golf_foto3.jpg" alt="Playacar Golf Course - hole 3">
+    </div>
+    <div class="golf-slide">
+      <img src="img/golf_foto4.jpg" alt="Playacar Golf Course - hole 4">
     </div>
   </div>
-</section>-->
+  <!-- Dots -->
+  <div class="golf-dots">
+    <span class="golf-dot active" onclick="goToSlide(0)"></span>
+    <span class="golf-dot" onclick="goToSlide(1)"></span>
+    <span class="golf-dot" onclick="goToSlide(2)"></span>
+    <span class="golf-dot" onclick="goToSlide(3)"></span>
+  </div>
+</div>
+    <div class="pool-text">
+      <p class="section-label">Robert von Hagge's</p>
+      <h2 class="section-title">Playa Car <em>Golf Course</em></h2>
+      <div class="divider"></div>
+      <p>Designed by world-renowned architect <strong>Robert von Hagge,</strong> Playacar's championship golf course winds through lush tropical jungle with demanding fairways, strategic water hazards, and tournament-caliber bunkers surrounding the greens — an unforgettable round in the heart of the Riviera Maya.</p>
+      <br>
+      <p style="color:rgba(255,255,255,0.45); font-size:13px; letter-spacing:1px;">Championship Design · Jungle Setting · ÁStrategic Water Features</p>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      🛏️ RECÁMARAS — Tabs interactivos para cada suite
@@ -355,15 +425,15 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
   <!--<p class="section-label">Recámaras</p> -->
   <h2 class="section-title">Rooms</h2>
   <div class="divider"></div>
-  <!--<p style="max-width:700px; font-size:15px; line-height:1.85; color:#666; margin-bottom:40px;">Cada suite cuenta con baño privado, cocina equipada, área de comedor y personalidad única. Tres tienen nivel loft privado; dos están en planta baja con acceso a terraza. Todas con A/C y decoración artesanal mexicana.</p> -->
+  <p style="max-width:700px; font-size:15px; line-height:1.85; color:#666; margin-bottom:40px;">An open-plan living, dining and kitchen space</p>
 
   <div class="bedroom-tabs">
     <button class="bedroom-tab active" onclick="showBedroom(0, this)">Loft Bedroom · 1</button>
     <button class="bedroom-tab" onclick="showBedroom(1, this)">Loft Bedroom · 2</button>
     <button class="bedroom-tab" onclick="showBedroom(2, this)">Loft Bedroom · 3</button>
-    <button class="bedroom-tab" onclick="showBedroom(3, this)">Suite 4 · Loft</button>
-    <button class="bedroom-tab" onclick="showBedroom(4, this)">Suite 5 · Ground</button>
-    <button class="bedroom-tab" onclick="showBedroom(5, this)">Suite 6 · Ground</button>
+    <button class="bedroom-tab" onclick="showBedroom(3, this)">Loft Bedroom · 4</button>
+    <button class="bedroom-tab" onclick="showBedroom(4, this)">Bedroom 1st lvl · 5</button>
+    <button class="bedroom-tab" onclick="showBedroom(5, this)">Bedroom 1st lvl · 6</button>
   </div>
 
   <div class="bedroom-panels">
@@ -378,8 +448,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
         <img src="img/terraza-jardinera.jpeg" alt="Suite 1 - foto 5">
       </div>
       <div class="bedroom-info">
-        <h3>Suite 1 · Loft</h3>
-        <p>Recámara doble en nivel loft con baño privado de lavabo Talavera pintado a mano, cocina con comedor en la planta baja y vistas directas al jardín.</p>
+        <h3>Loft Bedroom · 1</h3>
+        <p>Spacious with a kitchennette, dining table, King size bed, terrace and bathroom. Mexican colors and talavera tile.</p>
       </div>
     </div>
     <div class="bedroom-panel">
@@ -393,8 +463,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
         <img src="img/terraza-jardinera.jpeg" alt="Suite 2 - foto 5">
       </div>
       <div class="bedroom-info">
-        <h3>Suite 2 · Loft</h3>
-        <p>Amplia suite loft con vibrante decoración artesanal mexicana, cocina privada, comedor y escalera de hierro que conduce al loft con baño privado.</p>
+        <h3>Loft Bedroom · 2</h3>
+        <p>Spacious with a kitchennette, dining table, King size bed, terrace and bathroom. Mexican vibrant and warm tones and handmade talavera tiles</p>
       </div>
     </div>
     <div class="bedroom-panel">
@@ -408,8 +478,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
         <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto 5">
       </div>
       <div class="bedroom-info">
-        <h3>Suite 3 · Loft</h3>
-        <p>Luminosa suite loft con vistas al jardín tropical a través de una puerta corrediza. Cuenta con muebles de madera tallada y coloridos textiles artesanales.</p>
+        <h3>Loft Bedroom · 3</h3>
+        <p>Spacious with a kitchennette, dining table, matrimonial bed and bathroom with closet. Mexican colors and travertino tile</p>
       </div>
     </div>
     <div class="bedroom-panel">
@@ -423,8 +493,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
     <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto 5">
   </div>
   <div class="bedroom-info">
-    <h3>Suite 4 · Loft</h3>
-    <p>Suite en segunda planta con llamativa cabecera fucsia...</p>
+    <h3>Loft bedroom 4</h3>
+    <p>SSpacious with a kitchennette, dining table, matrimonial bed and bathroom with closet. Mexican vibrant colors and travertino tile</p>
   </div>
 </div>
   <div class="bedroom-panel">
@@ -438,8 +508,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
     <img src="img/suite-5-planta-baja-bed.jpeg" alt="Suite 5 - foto 5">
   </div>
   <div class="bedroom-info">
-    <h3>Suite 5 · Planta Baja</h3>
-    <p>Suite en planta baja con llamativa cabecera fucsia...</p>
+    <h3>Bedroom 1st lvl · 5</h3>
+    <p>On the first level with a kitchennette, dining table, King size bed and bathroom with closet. Mexican colors</p>
   </div>
 </div>
 <div class="bedroom-panel">
@@ -453,8 +523,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
     <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto 5">
   </div>
   <div class="bedroom-info">
-    <h3>Suite 6 · Planta Baja</h3>
-    <p>Suite en planta baja con llamativa cabecera fucsia...</p>
+    <h3>Bedroom 1st lvl · 6</h3>
+    <p>SOn the first level with a kitchennette, dining table, King size bed and bathroom. Mexican colors</p>
   </div>
 </div>
   </div>
@@ -482,50 +552,50 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
      Para agregar más: copia un bloque <div class="amenity-item">
      ============================================================ -->
 <section class="amenities" id="amenities">
-  <p class="section-label">Amenidades</p>
-  <h2 class="section-title">Lujo sin Compromisos</h2>
+  <p class="section-label">Amenities/p>
+  <h2 class="section-title">An Exceptional Place to Live</h2>
   <div class="divider"></div>
   <div class="amenities-grid">
     <div class="amenity-item">
       <div class="amenity-icon">🔒</div>
       <div>
-        <div class="amenity-title">Seguridad 24/7</div>
-        <div class="amenity-desc">Playacar es un fraccionamiento de lujo totalmente cerrado con acceso controlado y seguridad 24/7 — hogar de los mejores hoteles resort de Playa del Carmen.</div>
+        <div class="amenity-title">Gated Security 24/7</div>
+        <div class="amenity-desc">Playacar is a fully gated luxury development with controlled access and 24/7 security — home to Playa del Carmen's finest resort hotels.</div>
       </div>
     </div>
     <div class="amenity-item">
       <div class="amenity-icon">⛳</div>
       <div>
-        <div class="amenity-title">Campo de Golf · Campo de Golf</div>
-        <div class="amenity-desc">Campo de golf campeonato dentro del desarrollo, disponible exclusivamente para residentes y huéspedes de Playacar.</div>
+        <div class="amenity-title">Robert von Hagge's Golf Course</div>
+        <div class="amenity-desc">Robert von Hagge's championship design winds through tropical jungle with tight fairways, water hazards, and tough bunkers — a true test in paradise.</div>
       </div>
     </div>
     <div class="amenity-item">
       <div class="amenity-icon">🏖️</div>
       <div>
-        <div class="amenity-title">Club de Playa Privado</div>
-        <div class="amenity-desc">Los propietarios disfrutan acceso exclusivo al Club de Playa de Playacar en el Caribe — a solo 5 minutos caminando de la propiedad.</div>
+        <div class="amenity-title">Private Beach Club</div>
+        <div class="amenity-desc">Owners enjoy exclusive access to the Playacar Beach Club on the Caribbean — just a 5-minute walk from the property</div>
       </div>
     </div>
     <div class="amenity-item">
       <div class="amenity-icon">☀️</div>
       <div>
-        <div class="amenity-title">Paneles Solares</div>
-        <div class="amenity-desc">La propiedad incluye paneles solares instalados, reduciendo significativamente los costos de energía y mejorando la sustentabilidad.</div>
+        <div class="amenity-title">Solar Panels</div>
+        <div class="amenity-desc">Property includes installed solar panels, significantly reducing energy costs and improving sustainability.</div>
       </div>
     </div>
     <div class="amenity-item">
       <div class="amenity-icon">🚗</div>
       <div>
-        <div class="amenity-title">Estacionamiento para 4 Autos</div>
-        <div class="amenity-desc">Estacionamiento privado para hasta 4 vehículos dentro de la propiedad.</div>
+        <div class="amenity-title">Parking for 4 cars</div>
+        <div class="amenity-desc">Private parking for up to 4 vehicles within the property.</div>
       </div>
     </div>
     <div class="amenity-item">
       <div class="amenity-icon">🛣️</div>
       <div>
-        <div class="amenity-title">Carretera Cancún–Tulum</div>
-        <div class="amenity-desc">Acceso directo a la carretera federal Cancún–Tulum — conectándote con todo el corredor de la Riviera Maya.</div>
+        <div class="amenity-title">Cancun-Tulum Highway</div>
+        <div class="amenity-desc">irect access to the federal Cancún–Tulum highway — connecting you to the entire Riviera Maya corridor.</div>
       </div>
     </div>
   </div>
@@ -585,11 +655,11 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
      href="https://wa.me/521TUNUMERO"
      ============================================================ -->
 <section class="contact" id="contact">
-  <p class="section-label">Contacto</p>
-  <h2 class="section-title">Agenda una Visita Privada</h2>
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Schedule a Visit</h2>
   <div class="divider"></div>
-  <div class="contact-price">USD $1,850,000</div>
-  <p class="contact-price-label">Precio de Venta</p>
+  <!-- <div class="contact-price">USD $1,850,000</div> 
+  <p class="contact-price-label">Precio de Venta</p>-->
   <div class="contact-box">
     <div class="contact-name">[Agent Name]</div>
     <div class="contact-role">Asesor Inmobiliario</div>
@@ -620,6 +690,19 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
 function showBedroom(index, btn) {
   document.querySelectorAll('.bedroom-panel').forEach((p,i) => p.classList.toggle('active', i === index));
   document.querySelectorAll('.bedroom-tab').forEach((t,i) => t.classList.toggle('active', i === index));
+}
+
+// ⛳ CARRUSEL GOLF
+let currentSlide = 0;
+const autoPlay = setInterval(() => {
+  currentSlide = (currentSlide + 1) % 4;
+  goToSlide(currentSlide);
+}, 4000);
+
+function goToSlide(n) {
+  document.querySelectorAll('.golf-slide').forEach((s,i) => s.classList.toggle('active', i === n));
+  document.querySelectorAll('.golf-dot').forEach((d,i) => d.classList.toggle('active', i === n));
+  currentSlide = n;
 }
 </script>
 </body>
