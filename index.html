@@ -61,7 +61,7 @@
 
   /* SECTIONS */
   section { padding: 88px 8%; }
-  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; }
+  .section-label { font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; }
   .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 54px); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
   .divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 32px; }
 
@@ -73,9 +73,22 @@
   .stat-item { background: var(--cream); padding: 28px 20px; text-align: center; }
   .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--terracotta); line-height:1; margin-bottom: 6px; }
   .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+  .stat-nombre { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--terracotta); line-height:1; margin-bottom: 6px; }
 
   /* PHOTO STRIP — 4 photos */
-  .photo-strip { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 3px; height: 480px; overflow: hidden; background: #000; }
+  .photo-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0px;
+  height: 350px;
+  overflow: hidden;
+}
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
   .photo-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display:block; }
   .photo-strip img:hover { transform: scale(1.05); }
 
@@ -139,10 +152,35 @@
 
   /* AMENITIES */
   .amenities { background: var(--sand); }
-  .amenities-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top:48px; background: rgba(0,0,0,0.08); }
+  .amenities-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: stretch;
+}
+.amenities-left { width: 100%; }
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 0px;
+  background: rgba(0,0,0,0.08);
+}
+.amenities-right {
+  display: flex;
+  min-height: 100%;
+}
+.amenities-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  flex: 1;
+}
   .amenity-item { background: var(--cream); padding: 36px 28px; display:flex; align-items:flex-start; gap:18px; }
   .amenity-icon { font-size:26px; flex-shrink:0; margin-top:3px; }
-  .amenity-title { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color: var(--terracotta); margin-bottom:8px; font-weight:500; }
+  .amenity-title { font-size:14x; letter-spacing:1.5px; text-transform:uppercase; color: var(--terracotta); margin-bottom:8px; font-weight:500; }
   .amenity-desc { font-size:14px; color:#666; line-height:1.75; }
 
   /* LOCATION */
@@ -248,6 +286,35 @@
 }
 .golf-dot.active {
   background: #ffffff;
+}
+
+/* ✨ CALLOUT DIVIDER */
+.callout-divider {
+  background: #1a1710;
+  padding: 64px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.callout-line {
+  flex: 1;
+  height: 1px;
+  background: #b8952a;
+  opacity: 0.4;
+  max-width: 200px;
+}
+.callout-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3.5vw, 42px);
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.callout-text em {
+  color: #b8952a;
+  font-style: italic;
 }
 
 </style>
@@ -357,12 +424,12 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
     </div>
     <div>
       <div class="stats-grid">
-        <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Suites</div></div>
-        <div class="stat-item"><div class="stat-num">330</div><div class="stat-label">m² Sup. Suite</div></div>
-        <div class="stat-item"><div class="stat-num">445</div><div class="stat-label">m² de Terreno</div></div>
-        <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Estacionamientos</div></div>
-        <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Suites con Loft</div></div>
-        <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Suites Planta Baja</div></div>
+        <div class="stat-item"><div class="stat-num">4,784</div><div class="stat-label">sq. ft. Land Area</div></div>
+        <div class="stat-item"><div class="stat-num">3,548</div><div class="stat-label">sq. ft. Residence Area</div></div>
+        <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Loft Bedrooms</div></div>
+        <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Ground lvl bedrooms</div></div>
+        <div class="stat-item"><div class="stat-nombre">Open Living Dinning Kitchen</div><div class="stat-label"></div></div>
+        <div class="stat-item"><div class="stat-nombre">Private Pool</div><div class="stat-label"></div></div>
       </div>
     </div>
   </div>
@@ -375,11 +442,11 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
      y cambia src a: src="fotos/tu_foto.jpg"
      ============================================================ -->
 <div class="photo-strip">
-  <img src="img/alberca-deeck-1.jpeg" alt="Pool and deck">
-  <img src="img/suite-5-planta-baja-view.jpeg" alt="Bedroom suite">
-  <img src="img/suite-2-loft-bedroom.jpeg" alt="Loft bedroom">
-  <img src="img/terraza-jardinera.jpeg" alt="Planted terrace border">
-</div>
+  <img src="img/alberca-deeck-2.jpeg" alt="Pool and deck">
+  <!-- <img src="img/bano-imagen.jpeg" alt="Bedroom suite"> -->
+  <img src="img/dinning-table.jpeg" alt="Loft bedroom">
+  <img src="img/room-2.jpeg" alt="Planted terrace border">
+</div> 
 
  <!--============================================================
      🏊 GOLF COURT — Sección con foto grande + texto
@@ -537,6 +604,13 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
   </div>
 </section>
 
+<!-- DIVIDER CALLOUT -->
+<div class="callout-divider">
+  <div class="callout-line"></div>
+  <p class="callout-text">Live Playa <em>Own a piece of paradise.</em></p>
+  <div class="callout-line"></div>
+</div>
+
 <!-- ============================================================
      🖼️ GALERÍA MOSAICO — Grid de fotos decorativo
      CAMBIAR: reemplaza los src="..." con tus mejores fotos
@@ -559,55 +633,66 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
      Para agregar más: copia un bloque <div class="amenity-item">
      ============================================================ -->
 <section class="amenities" id="amenities">
-  <p class="section-label">Amenities/p>
+  <p class="section-label">AMENITIES</p>
   <h2 class="section-title">An Exceptional Place to Live</h2>
   <div class="divider"></div>
-  <div class="amenities-grid">
-    <div class="amenity-item">
-      <div class="amenity-icon">🔒</div>
-      <div>
-        <div class="amenity-title">Gated Security 24/7</div>
-        <div class="amenity-desc">Playacar is a fully gated luxury development with controlled access and 24/7 security — home to Playa del Carmen's finest resort hotels.</div>
+  <div class="amenities-layout">
+    <div class="amenities-grid">
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🔒</div>
+        <div>
+          <div class="amenity-title">GATED SECURITY 24/7</div>
+          <div class="amenity-desc">Playacar is a fully gated luxury development with controlled access and 24/7 security — home to Playa del Carmen's finest resort hotels.</div>
+        </div>
       </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">⛳</div>
+        <div>
+          <div class="amenity-title">ROBERT VON HAGGE'S GOLF COURSE</div>
+          <div class="amenity-desc">Robert von Hagge's championship design winds through tropical jungle with tight fairways, water hazards, and tough bunkers — a true test in paradise.</div>
+        </div>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🏖️</div>
+        <div>
+          <div class="amenity-title">PRIVATE BEACH CLUB</div>
+          <div class="amenity-desc">Owners enjoy exclusive access to the Playacar Beach Club on the Caribbean — just a 5-minute walk from the property.</div>
+        </div>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">☀️</div>
+        <div>
+          <div class="amenity-title">SOLAR PANELS</div>
+          <div class="amenity-desc">Property includes installed solar panels, significantly reducing energy costs and improving sustainability.</div>
+        </div>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🚗</div>
+        <div>
+          <div class="amenity-title">PARKING FOR 4 CARS</div>
+          <div class="amenity-desc">Private parking for up to 4 vehicles within the property.</div>
+        </div>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🛣️</div>
+        <div>
+          <div class="amenity-title">CANCÚN–TULUM HIGHWAY</div>
+          <div class="amenity-desc">Direct access to the federal Cancún–Tulum highway — connecting you to the entire Riviera Maya corridor.</div>
+        </div>
+      </div>
+
     </div>
-    <div class="amenity-item">
-      <div class="amenity-icon">⛳</div>
-      <div>
-        <div class="amenity-title">Robert von Hagge's Golf Course</div>
-        <div class="amenity-desc">Robert von Hagge's championship design winds through tropical jungle with tight fairways, water hazards, and tough bunkers — a true test in paradise.</div>
-      </div>
-    </div>
-    <div class="amenity-item">
-      <div class="amenity-icon">🏖️</div>
-      <div>
-        <div class="amenity-title">Private Beach Club</div>
-        <div class="amenity-desc">Owners enjoy exclusive access to the Playacar Beach Club on the Caribbean — just a 5-minute walk from the property</div>
-      </div>
-    </div>
-    <div class="amenity-item">
-      <div class="amenity-icon">☀️</div>
-      <div>
-        <div class="amenity-title">Solar Panels</div>
-        <div class="amenity-desc">Property includes installed solar panels, significantly reducing energy costs and improving sustainability.</div>
-      </div>
-    </div>
-    <div class="amenity-item">
-      <div class="amenity-icon">🚗</div>
-      <div>
-        <div class="amenity-title">Parking for 4 cars</div>
-        <div class="amenity-desc">Private parking for up to 4 vehicles within the property.</div>
-      </div>
-    </div>
-    <div class="amenity-item">
-      <div class="amenity-icon">🛣️</div>
-      <div>
-        <div class="amenity-title">Cancun-Tulum Highway</div>
-        <div class="amenity-desc">irect access to the federal Cancún–Tulum highway — connecting you to the entire Riviera Maya corridor.</div>
-      </div>
+    <div class="amenities-right">
+      <img src="img/portada_aerea.jpeg">
     </div>
   </div>
 </section>
-
 <!-- ============================================================
      📍 UBICACIÓN — Texto con distancias + mapa de Google
      CAMBIAR: distancias y descripciones en la lista
