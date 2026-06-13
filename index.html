@@ -1,333 +1,878 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛳</text></svg>">
-<!-- Open Graph para compartir en WhatsApp, Facebook, etc. -->
-<meta property="og:title" content="Luxury Residence for Sale — Playacar">
-<meta property="og:description" content="5-bedroom estate in Playacar, Playa del Carmen. Private pool, golf course & beach club access. USD $1,850,000">
-<meta property="og:image" content="https://playacar-xamanha16.netlify.app/img/portada_aerea.jpg">
-<meta property="og:url" content="https://playacar-xamanha16.netlify.app">
-<meta property="og:type" content="website">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Residence — Playacar, Playa del Carmen</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- ============================================================
+  <meta charset="UTF-8">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛳</text></svg>">
+  <!-- Open Graph para compartir en WhatsApp, Facebook, etc. -->
+  <meta property="og:title" content="Luxury Residence for Sale — Playacar">
+  <meta property="og:description"
+    content="5-bedroom estate in Playacar, Playa del Carmen. Private pool, golf course & beach club access. USD $1,850,000">
+  <meta property="og:image" content="https://playacar-xamanha16.netlify.app/img/portada_aerea.jpg">
+  <meta property="og:url" content="https://playacar-xamanha16.netlify.app">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Residence — Playacar, Playa del Carmen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <!-- ============================================================
      🎨 ESTILOS CSS — Colores, fuentes y diseño general
      Si quieres cambiar colores, busca la sección :root abajo
      ============================================================ -->
-<style>
-  /* 🎨 PALETA DE COLORES — Cambia aquí para cambiar todo el sitio */
-  :root {
-    --cream: #f5f0e8;
-    --sand: #e8dcc8;
-    --terracotta: #c4693c;
-    --deep: #1a1710;
-    --gold: #b8952a;
-    --white: #ffffff;
-    --gray: #888880;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--cream); color: var(--deep); font-family: 'Jost', sans-serif; font-weight:300; }
+  <style>
+    /* 🎨 PALETA DE COLORES — Cambia aquí para cambiar todo el sitio */
+    :root {
+      --cream: #f5f0e8;
+      --sand: #e8dcc8;
+      --terracotta: #c4693c;
+      --deep: #1a1710;
+      --gold: #b8952a;
+      --white: #ffffff;
+      --gray: #888880;
+    }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    padding: 18px 8%;
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(26,23,16,0.65); backdrop-filter: blur(12px);
-  }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--white); letter-spacing: 2px; }
-  .nav-links { display: flex; gap: 32px; }
-  .nav-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
-  .nav-links a:hover { color: var(--gold); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* COVER */
-  .cover { position: relative; height: 100vh; min-height: 620px; overflow: hidden; display: flex; align-items: flex-end; }
-  .cover-bg { position: absolute; inset: 0; background-image: url("img/portada_aerea.jpeg"); background-size: cover; background-position: center; filter: brightness(0.72); }
-  .cover-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,23,16,0.9) 0%, rgba(26,23,16,0.05) 55%, transparent 100%); }
-  .cover-content { position: relative; z-index:2; padding: 64px 8%; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .cover-tag { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; border: 2px solid #ffffff; background: rgba(0,0,0,0.55); padding: 10px 20px; margin-bottom: 24px; font-weight: 500; }
-  .cover-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 6vw, 84px); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 10px; }
-  .cover-subtitle { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(18px, 2.5vw, 28px); color: var(--sand); margin-bottom: 32px; }
-  .cover-price { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; opacity: 1; text-shadow: 0 1px 6px rgba(0,0,0,0.8); }
-  .cover-price span { color: #f0c040; font-size: 28px; letter-spacing: 1px; font-family: 'Cormorant Garamond', serif; text-shadow: 0 2px 8px rgba(0,0,0,0.9); font-weight: 600; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ADDRESS BAR */
-  .address-bar { background: var(--terracotta); padding: 18px 8%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .address-bar span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.92); }
+    body {
+      background: var(--cream);
+      color: var(--deep);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+    }
 
-  /* SECTIONS */
-  section { padding: 88px 8%; }
-  .section-label { font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 54px); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
-  .divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 32px; }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(26, 23, 16, 0.65);
+      backdrop-filter: blur(12px);
+    }
 
-  /* OVERVIEW */
-  .overview { background: var(--white); }
-  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-  .overview-text p { font-size: 15px; line-height: 1.95; color: #555; margin-bottom: 20px; }
-  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--sand); }
-  .stat-item { background: var(--cream); padding: 28px 20px; text-align: center; }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--terracotta); line-height:1; margin-bottom: 6px; }
-  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
-  .stat-nombre { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--terracotta); line-height:1; margin-bottom: 6px; }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
 
-  /* PHOTO STRIP — 4 photos */
-  .photo-strip {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0px;
-  height: 350px;
-  overflow: hidden;
-}
-.photo-strip img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-  .photo-strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display:block; }
-  .photo-strip img:hover { transform: scale(1.05); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
 
-  /* POOL */
-  .pool-section { background: var(--deep); padding: 0; }
-  .pool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; height: 560px; }
-  .pool-grid img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.6s; }
-  .pool-grid img:hover { transform:scale(1.03); }
-  .pool-text { display:flex; flex-direction:column; justify-content:center; padding: 64px 72px; background: var(--deep); }
-  .pool-text .section-label { color: var(--gold); }
-  .pool-text .section-title { color: var(--white); }
-  .pool-text .divider { background: var(--terracotta); }
-  .pool-text p { color: rgba(255,255,255,0.65); font-size:15px; line-height:1.85; }
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-  /* BEDROOMS */
+    .nav-links a:hover {
+      color: var(--gold);
+    }
 
-  .bedroom-panel { display: none; }
-  .bedroom-panel.active {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 3px;
-  }
-  .bedroom-panel-main-img {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    height: 640px;
-    overflow: hidden;
-  }
-  .bedroom-panel-main-img img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .bedroom-panel-col {
-    grid-column: 2;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 3px;
-    height: 420px;
-    overflow: hidden;
-  }
-  .bedroom-panel-col img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-  }
-  .bedroom-info {
-    grid-column: 2;
-    grid-row: 2;
-    background: var(--white);
-    padding: 28px 32px;
-    display: flex; flex-direction: column; justify-content: center;
-    height: 220px;
-    overflow: hidden;
-  }
-  .bedroom-info h3 { font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:300; margin-bottom:10px; }
-  .bedroom-info p { font-size:13px; line-height:1.75; color:#666; }
-.bedroom-tabs { display:flex; gap:2px; margin-bottom:3px; flex-wrap:wrap; }
-.bedroom-tab { flex:1; min-width:140px; padding: 18px 24px; background: var(--sand); cursor:pointer; transition: background 0.3s; font-size:11px; letter-spacing:2px; text-transform:uppercase; color: var(--gray); border:none; font-family:'Jost',sans-serif; }
-.bedroom-tab.active { background: var(--terracotta); color: var(--white); }
-.bedroom-tab:hover:not(.active) { background: #d8cebb; }
+    /* COVER */
+    .cover {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
 
-  /* AMENITIES */
-  .amenities { background: var(--sand); }
-  .amenities-layout {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 64px;
-  align-items: stretch;
-}
-.amenities-left { width: 100%; }
-.amenities-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  margin-top: 0px;
-  background: rgba(0,0,0,0.08);
-}
-.amenities-right {
-  display: flex;
-  min-height: 100%;
-}
-.amenities-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  flex: 1;
-}
-  .amenity-item { background: var(--cream); padding: 36px 28px; display:flex; align-items:flex-start; gap:18px; }
-  .amenity-icon { font-size:26px; flex-shrink:0; margin-top:3px; }
-  .amenity-title { font-size:14x; letter-spacing:1.5px; text-transform:uppercase; color: var(--terracotta); margin-bottom:8px; font-weight:500; }
-  .amenity-desc { font-size:14px; color:#666; line-height:1.75; }
+    .cover-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("img/portada_aerea.jpeg");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.72);
+    }
 
-  /* LOCATION */
-  .location { background: var(--white); }
-  .location-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
-  .location-items { list-style:none; }
-  .location-item { display:flex; align-items:flex-start; gap:20px; padding:20px 0; border-bottom:1px solid var(--sand); }
-  .location-item:last-child { border-bottom:none; }
-  .location-dist { font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--terracotta); flex-shrink:0; width:70px; line-height:1; }
-  .location-name { font-size:13px; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; font-weight:500; }
-  .location-desc { font-size:13px; color:var(--gray); }
-  .map-embed { width:100%; height:420px; border:none; display:block; }
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 23, 16, 0.9) 0%, rgba(26, 23, 16, 0.05) 55%, transparent 100%);
+    }
 
-  /* GALLERY MOSAIC */
-  .gallery { background: var(--deep); padding: 0; }
-  .mosaic { display:grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(2,300px); gap:3px; }
-  .mosaic img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
-  .mosaic img:hover { transform:scale(1.04); }
-  .mosaic .span2 { grid-column: span 2; }
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      padding: 64px 8%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  /* CONTACT */
-  .contact { background: var(--deep); color: var(--white); text-align:center; padding: 100px 8%; }
-  .contact .section-label { color: var(--gold); }
-  .contact .section-title { color: var(--white); }
-  .contact .divider { margin: 0 auto 48px; }
-  .contact-price { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,5vw,68px); color:var(--gold); margin-bottom:8px; }
-  .contact-price-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:56px; }
-  .contact-box { display:inline-block; border:1px solid rgba(255,255,255,0.12); padding:48px 64px; min-width:380px; margin-bottom:40px; }
-  .contact-name { font-family:'Cormorant Garamond',serif; font-size:30px; margin-bottom:4px; }
-  .contact-role { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:32px; }
-  .contact-field { font-size:14px; color:rgba(255,255,255,0.45); margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1); }
-  .contact-cta { display:inline-block; margin-top:24px; padding:15px 52px; background:var(--terracotta); color:var(--white); font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-family:'Jost',sans-serif; transition:background 0.3s; }
-  .contact-cta:hover { background:var(--gold); }
+    .cover-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 10px 20px;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
 
-  @media (max-width:768px) {
-    .overview-grid, .location-grid, .pool-grid { grid-template-columns:1fr; gap:40px; height:auto; }
-    .pool-grid img { height:300px; }
-    .amenities-grid { grid-template-columns:1fr; }
-    .photo-strip { grid-template-columns:1fr 1fr; height:360px; }
-    .bedroom-panel.active { grid-template-columns:1fr; height:auto; }
-    .mosaic { grid-template-columns:1fr 1fr; grid-template-rows:repeat(3,200px); }
-    .nav-links { display:none; }
-    .contact-box { min-width:unset; padding:32px 24px; }
-  }
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 6vw, 84px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
 
-  /* 📸 PLACEHOLDER — Se muestra cuando la imagen no está cargada */
-  img {
-    background: #e8dcc8;
-    min-height: 80px;
-  }
-  img::before {
-    content: attr(alt);
-    display: block;
-    text-align: center;
-    padding: 20px;
-    color: #888;
-    font-size: 12px;
-    font-family: 'Jost', sans-serif;
-  }
+    .cover-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(18px, 2.5vw, 28px);
+      color: var(--sand);
+      margin-bottom: 32px;
+    }
 
-  /* ⛳ CARRUSEL GOLF */
-.golf-carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.golf-slides {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.golf-slide {
-  display: none;
-  width: 100%;
-  height: 100%;
-}
-.golf-slide.active {
-  display: block;
-}
-.golf-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.golf-dots {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-.golf-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.golf-dot.active {
-  background: #ffffff;
-}
+    .cover-price {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      opacity: 1;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    }
 
-/* ✨ CALLOUT DIVIDER */
-.callout-divider {
-  background: #1a1710;
-  padding: 64px 8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-}
-.callout-line {
-  flex: 1;
-  height: 1px;
-  background: #b8952a;
-  opacity: 0.4;
-  max-width: 200px;
-}
-.callout-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(24px, 3.5vw, 42px);
-  color: #ffffff;
-  text-align: center;
-  letter-spacing: 2px;
-  white-space: nowrap;
-}
-.callout-text em {
-  color: #b8952a;
-  font-style: italic;
-}
+    .cover-price span {
+      color: #f0c040;
+      font-size: 28px;
+      letter-spacing: 1px;
+      font-family: 'Cormorant Garamond', serif;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+      font-weight: 600;
+    }
 
-</style>
+    /* ADDRESS BAR */
+    .address-bar {
+      background: var(--terracotta);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .address-bar span {
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 88px 8%;
+    }
+
+    .section-label {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    /* OVERVIEW */
+    .overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .overview-text p {
+      font-size: 15px;
+      line-height: 1.95;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--sand);
+    }
+
+    .stat-item {
+      background: var(--cream);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .stat-nombre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    /* PHOTO STRIP — 4 photos */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0px;
+      height: 350px;
+      overflow: hidden;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .photo-strip img:hover {
+      transform: scale(1.05);
+    }
+
+    /* POOL */
+    .pool-section {
+      background: var(--deep);
+      padding: 0;
+    }
+
+    .pool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      height: 560px;
+    }
+
+    .pool-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s;
+    }
+
+    .pool-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    .pool-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 72px;
+      background: var(--deep);
+    }
+
+    .pool-text .section-label {
+      color: var(--gold);
+    }
+
+    .pool-text .section-title {
+      color: var(--white);
+    }
+
+    .pool-text .divider {
+      background: var(--terracotta);
+    }
+
+    .pool-text p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    /* BEDROOMS */
+
+    .bedroom-panel {
+      display: none;
+    }
+
+    .bedroom-panel.active {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 3px;
+    }
+
+    .bedroom-panel-main-img {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      height: 640px;
+      overflow: hidden;
+    }
+
+    .bedroom-panel-main-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bedroom-panel-col {
+      grid-column: 2;
+      grid-row: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+      height: 420px;
+      overflow: hidden;
+    }
+
+    .bedroom-panel-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bedroom-info {
+      grid-column: 2;
+      grid-row: 2;
+      background: var(--white);
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .bedroom-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .bedroom-info p {
+      font-size: 13px;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    .bedroom-tabs {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+
+    .bedroom-tab {
+      flex: 1;
+      min-width: 140px;
+      padding: 18px 24px;
+      background: var(--sand);
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      border: none;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .bedroom-tab.active {
+      background: var(--terracotta);
+      color: var(--white);
+    }
+
+    .bedroom-tab:hover:not(.active) {
+      background: #d8cebb;
+    }
+
+    /* AMENITIES */
+    .amenities {
+      background: var(--sand);
+    }
+
+    .amenities-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 64px;
+      align-items: stretch;
+    }
+
+    .amenities-left {
+      width: 100%;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 0px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    .amenities-right {
+      display: flex;
+      min-height: 100%;
+    }
+
+    .amenities-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      flex: 1;
+    }
+
+    .amenity-item {
+      background: var(--cream);
+      padding: 36px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .amenity-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .amenity-title {
+      font-size: 14x;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .amenity-desc {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.75;
+    }
+
+    /* LOCATION */
+    .location {
+      background: var(--white);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .location-items {
+      list-style: none;
+    }
+
+    .location-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .location-item:last-child {
+      border-bottom: none;
+    }
+
+    .location-dist {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      color: var(--terracotta);
+      flex-shrink: 0;
+      width: 70px;
+      line-height: 1;
+    }
+
+    .location-name {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .location-desc {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .map-embed {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+    }
+
+    /* GALLERY MOSAIC */
+    .gallery {
+      background: var(--deep);
+      padding: 0;
+    }
+
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr;
+      height: 500px;
+      gap: 0;
+    }
+
+    .mosaic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .mosaic img:hover {
+      transform: scale(1.04);
+    }
+
+    .mosaic .span2 {
+      grid-column: span 2;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--deep);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 8%;
+    }
+
+    .contact .section-label {
+      color: var(--gold);
+    }
+
+    .contact .section-title {
+      color: var(--white);
+    }
+
+    .contact .divider {
+      margin: 0 auto 48px;
+    }
+
+    .contact-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 5vw, 68px);
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .contact-price-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 56px;
+    }
+
+    .contact-box {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 48px 64px;
+      min-width: 380px;
+      margin-bottom: 40px;
+    }
+
+    .contact-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      margin-bottom: 4px;
+    }
+
+    .contact-role {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    .contact-field {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 15px 52px;
+      background: var(--terracotta);
+      color: var(--white);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'Jost', sans-serif;
+      transition: background 0.3s;
+    }
+
+    .contact-cta:hover {
+      background: var(--gold);
+    }
+
+    @media (max-width:768px) {
+
+      .overview-grid,
+      .location-grid,
+      .pool-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        height: auto;
+      }
+
+      .pool-grid img {
+        height: 300px;
+      }
+
+      .amenities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-strip {
+        grid-template-columns: 1fr 1fr;
+        height: 360px;
+      }
+
+      .bedroom-panel.active {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .mosaic {
+        grid-template-columns: 1fr;
+        grid-template-rows: 350px;
+      }
+
+      .mosaic img:nth-child(2),
+      .mosaic img:nth-child(3),
+      .mosaic img:nth-child(4),
+      .mosaic img:nth-child(5),
+      .mosaic img:nth-child(6) {
+        display: none;
+      }
+
+      .mosaic .span2 {
+        grid-column: span 1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .contact-box {
+        min-width: unset;
+        padding: 32px 24px;
+      }
+    }
+
+    /* 📸 PLACEHOLDER — Se muestra cuando la imagen no está cargada */
+    img {
+      background: #e8dcc8;
+      min-height: 80px;
+    }
+
+    img::before {
+      content: attr(alt);
+      display: block;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 12px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    /* ⛳ CARRUSEL GOLF */
+    .golf-carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .golf-slides {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .golf-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .golf-slide.active {
+      display: block;
+    }
+
+    .golf-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .golf-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .golf-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .golf-dot.active {
+      background: #ffffff;
+    }
+
+    /* ✨ CALLOUT DIVIDER */
+    .callout-divider {
+      background: #1a1710;
+      padding: 64px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .callout-line {
+      flex: 1;
+      height: 1px;
+      background: #b8952a;
+      opacity: 0.4;
+      max-width: 200px;
+    }
+
+    .callout-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3.5vw, 42px);
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .callout-text em {
+      color: #b8952a;
+      font-style: italic;
+    }
+
+    /* 📱 MOBILE — photo strip muestra solo 1 foto */
+    @media (max-width: 768px) {
+      .photo-strip {
+        grid-template-columns: 1fr;
+        height: 350px;
+      }
+
+      .photo-strip img:nth-child(2),
+      .photo-strip img:nth-child(3),
+      .photo-strip img:nth-child(4) {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      🔝 BARRA DE NAVEGACIÓN — Links del menú superior
      Puedes cambiar los nombres de los links o quitarlos
      ============================================================ -->
 
-<!-- 
+  <!-- 
 =================================================================
 📁 GUÍA DE IMÁGENES — Crea una carpeta llamada "img" junto a este 
 archivo HTML y agrega las siguientes fotos con estos nombres exactos:
@@ -369,331 +914,366 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
 =================================================================
 -->
 
-<nav>
-  <div class="nav-logo">PLAYACAR ESTATE</div>
-  <div class="nav-links">
-    <a href="#overview">Description</a>
-    <a href="#pool">Golf Course</a>
-    <a href="#bedrooms">Rooms</a>
-    <a href="#amenities">Amenities</a>
-    <a href="#location">Location</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <nav>
+    <div class="nav-logo">PLAYACAR ESTATE</div>
+    <div class="nav-links">
+      <a href="#overview">Description</a>
+      <a href="#pool">Golf Course</a>
+      <a href="#bedrooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<!-- ============================================================
+  <!-- ============================================================
      🏠 PORTADA — Sección principal (hero)
      CAMBIAR: título, subtítulo, precio, dirección
      La foto de fondo se cambia en CSS: .cover-bg { background-image }
      ============================================================ -->
-<section class="cover">
-  <div class="cover-bg"></div>
-  <div class="cover-overlay"></div>
-  <div class="cover-content">
-    <div class="cover-tag">For Sale &nbsp;|&nbsp; Playacar, Playa del Carmen</div>
-    <h1 class="cover-title">Luxury Residence<br><em>Playacar Estate</em></h1>
-    <p class="cover-subtitle">Paseo Xaman Ha 16 · Playacar, Playa del Carmen, Q.Roo</p>
-    <!--<p class="cover-price">Precio de Venta &nbsp;&nbsp;<span>USD $1,850,000</span></p>
+  <section class="cover">
+    <div class="cover-bg"></div>
+    <div class="cover-overlay"></div>
+    <div class="cover-content">
+      <div class="cover-tag">For Sale &nbsp;|&nbsp; Playacar, Playa del Carmen</div>
+      <h1 class="cover-title">Luxury Residence<br><em>Playacar Estate</em></h1>
+      <p class="cover-subtitle">Paseo Xaman Ha 16 · Playacar, Playa del Carmen, Q.Roo</p>
+      <!--<p class="cover-price">Precio de Venta &nbsp;&nbsp;<span>USD $1,850,000</span></p>
   </div> -->
-</section>
+  </section>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      📍 BARRA DE DIRECCIÓN — Franja terracotta debajo de la portada
      CAMBIAR: dirección, tipo de comunidad, amenidades destacadas
      ============================================================ -->
-<div class="address-bar">
-  <span>📍 Playacar, Playa del Carmen</span>
-  <span>🔒 Gated Community With 24/7 Security</span>
-  <span>⛳ 18-hole Golf Course designed by <strong>Robert von Hagge</strong></span>
-  <span>🏖️ Beach Club at the Reff.</span>
-</div>
+  <div class="address-bar">
+    <span>📍 Playacar, Playa del Carmen</span>
+    <span>🔒 Gated Community With 24/7 Security</span>
+    <span>⛳ 18-hole Golf Course designed by <strong>Robert von Hagge</strong></span>
+    <span>🏖️ Beach Club at the Reff.</span>
+  </div>
 
-<!-- ============================================================
+  <!-- ============================================================
      📋 DESCRIPCIÓN GENERAL — Texto introductorio + estadísticas
      CAMBIAR: párrafos descriptivos y números de las estadísticas
      ============================================================ -->
-<section class="overview" id="overview">
-  <div class="overview-grid">
-    <div class="overview-text">
-      <p class="section-label">Overview</p>
-      <h2 class="section-title">An opportunity in the heart of Playacar</em></h2>
-      <div class="divider"></div>
-      <p>This exceptional residence is located in Playacar. Home to hotels world-class, 18 whole Golf Course and acces to the beach.</p>
-      <p>This spacious property with 4 loft-style bedrooms and  2 traditional bedrooms, each one with bathroom. Open-plan living and dining area, laundry and private pool. Parking for 4 vehicles</p>
-    </div>
-    <div>
-      <div class="stats-grid">
-        <div class="stat-item"><div class="stat-num">4,784</div><div class="stat-label">sq. ft. Land Area</div></div>
-        <div class="stat-item"><div class="stat-num">3,548</div><div class="stat-label">sq. ft. Residence Area</div></div>
-        <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Loft Bedrooms</div></div>
-        <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Ground lvl bedrooms</div></div>
-        <div class="stat-item"><div class="stat-nombre">Open Living Dinning Kitchen</div><div class="stat-label"></div></div>
-        <div class="stat-item"><div class="stat-nombre">Private Pool</div><div class="stat-label"></div></div>
+  <section class="overview" id="overview">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <p class="section-label">Overview</p>
+        <h2 class="section-title">An opportunity in the heart of Playacar</em></h2>
+        <div class="divider"></div>
+        <p>This exceptional residence is located in Playacar. Home to hotels world-class, 18 whole Golf Course and acces
+          to the beach.</p>
+        <p>This spacious property with 4 loft-style bedrooms and 2 traditional bedrooms, each one with bathroom.
+          Open-plan living and dining area, laundry and private pool. Parking for 4 vehicles</p>
+      </div>
+      <div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num">4,784</div>
+            <div class="stat-label">sq. ft. Land Area</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3,548</div>
+            <div class="stat-label">sq. ft. Residence Area</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Loft Bedrooms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Ground lvl bedrooms</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-nombre">Open Living Dinning Kitchen</div>
+            <div class="stat-label"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-nombre">Private Pool</div>
+            <div class="stat-label"></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      📸 TIRA DE FOTOS — 4 fotos horizontales
      CAMBIAR: reemplaza los src="..." con las rutas de tus fotos
      Si subes a Netlify, pon las fotos en una carpeta /fotos/
      y cambia src a: src="fotos/tu_foto.jpg"
      ============================================================ -->
-<div class="photo-strip">
-  <img src="img/alberca-deeck-2.jpeg" alt="Pool and deck">
-  <!-- <img src="img/bano-imagen.jpeg" alt="Bedroom suite"> -->
-  <img src="img/dinning-table.jpeg" alt="Loft bedroom">
-  <img src="img/room-2.jpeg" alt="Planted terrace border">
-</div> 
+  <div class="photo-strip">
+    <img src="img/alberca-deeck-2.jpeg" alt="Pool and deck">
+    <!-- <img src="img/bano-imagen.jpeg" alt="Bedroom suite"> -->
+    <img src="img/dinning-table.jpeg" alt="Loft bedroom">
+    <img src="img/room-2.jpeg" alt="Planted terrace border">
+  </div>
 
- <!--============================================================
+  <!--============================================================
      🏊 GOLF COURT — Sección con foto grande + texto
      CAMBIAR: foto de alberca (src) y texto descriptivo
      ============================================================ -->
-<section class="pool-section" id="pool" style="padding:0;">
-  <div class="pool-grid">
-    <!-- CARRUSEL GOLF -->
-<div class="golf-carousel">
-  <div class="golf-slides">
-    <div class="golf-slide active">
-      <img src="img/golf_foto1.jpg" alt="Playacar Golf Course - hole 1">
+  <section class="pool-section" id="pool" style="padding:0;">
+    <div class="pool-grid">
+      <!-- CARRUSEL GOLF -->
+      <div class="golf-carousel">
+        <div class="golf-slides">
+          <div class="golf-slide active">
+            <img src="img/golf_foto1.jpg" alt="Playacar Golf Course - hole 1">
+          </div>
+          <div class="golf-slide">
+            <img src="img/golf_foto2.jpg" alt="Playacar Golf Course - hole 2">
+          </div>
+          <div class="golf-slide">
+            <img src="img/golf_foto3.jpg" alt="Playacar Golf Course - hole 3">
+          </div>
+          <div class="golf-slide">
+            <img src="img/golf_foto4.jpg" alt="Playacar Golf Course - hole 4">
+          </div>
+        </div>
+        <!-- Dots -->
+        <div class="golf-dots">
+          <span class="golf-dot active" onclick="goToSlide(0)"></span>
+          <span class="golf-dot" onclick="goToSlide(1)"></span>
+          <span class="golf-dot" onclick="goToSlide(2)"></span>
+          <span class="golf-dot" onclick="goToSlide(3)"></span>
+        </div>
+      </div>
+      <div class="pool-text">
+        <p class="section-label">Robert von Hagge's</p>
+        <h2 class="section-title">Playacar <em>Golf Course</em></h2>
+        <div class="divider"></div>
+        <p>Designed by world-renowned architect <strong>Robert von Hagge,</strong> Playacar's championship golf course
+          winds through lush tropical jungle with demanding fairways bordered by mounds, strategic water hazards, and
+          tournament-caliber bunkers surrounding the greens — an unforgettable round in the heart of the Riviera Maya.
+        </p>
+        <br>
+        <p style="color:rgba(255,255,255,0.45); font-size:13px; letter-spacing:1px;">Championship Design · Jungle
+          Setting · ÁStrategic Water Features</p>
+      </div>
     </div>
-    <div class="golf-slide">
-      <img src="img/golf_foto2.jpg" alt="Playacar Golf Course - hole 2">
-    </div>
-    <div class="golf-slide">
-      <img src="img/golf_foto3.jpg" alt="Playacar Golf Course - hole 3">
-    </div>
-    <div class="golf-slide">
-      <img src="img/golf_foto4.jpg" alt="Playacar Golf Course - hole 4">
-    </div>
-  </div>
-  <!-- Dots -->
-  <div class="golf-dots">
-    <span class="golf-dot active" onclick="goToSlide(0)"></span>
-    <span class="golf-dot" onclick="goToSlide(1)"></span>
-    <span class="golf-dot" onclick="goToSlide(2)"></span>
-    <span class="golf-dot" onclick="goToSlide(3)"></span>
-  </div>
-</div>
-    <div class="pool-text">
-      <p class="section-label">Robert von Hagge's</p>
-      <h2 class="section-title">Playa Car <em>Golf Course</em></h2>
-      <div class="divider"></div>
-      <p>Designed by world-renowned architect <strong>Robert von Hagge,</strong> Playacar's championship golf course winds through lush tropical jungle with demanding fairways, strategic water hazards, and tournament-caliber bunkers surrounding the greens — an unforgettable round in the heart of the Riviera Maya.</p>
-      <br>
-      <p style="color:rgba(255,255,255,0.45); font-size:13px; letter-spacing:1px;">Championship Design · Jungle Setting · ÁStrategic Water Features</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      🛏️ RECÁMARAS — Tabs interactivos para cada suite
      CAMBIAR: nombres de tabs, fotos (src) y descripciones
      Para agregar/quitar suites: duplica o elimina un bloque
      <div class="bedroom-panel"> ... </div>
      ============================================================ -->
-<section class="bedrooms" id="bedrooms">
-  <!--<p class="section-label">Recámaras</p> -->
-  <h2 class="section-title">Rooms</h2>
-  <div class="divider"></div>
-  <p style="max-width:700px; font-size:15px; line-height:1.85; color:#666; margin-bottom:40px;">An open-plan living, dining and kitchen space</p>
+  <section class="bedrooms" id="bedrooms">
+    <!--<p class="section-label">Recámaras</p> -->
+    <h2 class="section-title">Rooms</h2>
+    <div class="divider"></div>
+    <p style="max-width:700px; font-size:15px; line-height:1.85; color:#666; margin-bottom:40px;">An open-plan living,
+      dining and kitchen space</p>
 
-  <div class="bedroom-tabs">
-    <button class="bedroom-tab active" onclick="showBedroom(0, this)">Loft Bedroom · 1</button>
-    <button class="bedroom-tab" onclick="showBedroom(1, this)">Loft Bedroom · 2</button>
-    <button class="bedroom-tab" onclick="showBedroom(2, this)">Loft Bedroom · 3</button>
-    <button class="bedroom-tab" onclick="showBedroom(3, this)">Loft Bedroom · 4</button>
-    <button class="bedroom-tab" onclick="showBedroom(4, this)">Bedroom 1st lvl · 5</button>
-    <button class="bedroom-tab" onclick="showBedroom(5, this)">Bedroom 1st lvl · 6</button>
-  </div>
+    <div class="bedroom-tabs">
+      <button class="bedroom-tab active" onclick="showBedroom(0, this)">Loft Bedroom · 1</button>
+      <button class="bedroom-tab" onclick="showBedroom(1, this)">Loft Bedroom · 2</button>
+      <button class="bedroom-tab" onclick="showBedroom(2, this)">Loft Bedroom · 3</button>
+      <button class="bedroom-tab" onclick="showBedroom(3, this)">Loft Bedroom · 4</button>
+      <button class="bedroom-tab" onclick="showBedroom(4, this)">Bedroom 1st lvl · 5</button>
+      <button class="bedroom-tab" onclick="showBedroom(5, this)">Bedroom 1st lvl · 6</button>
+    </div>
 
-  <div class="bedroom-panels">
-    <div class="bedroom-panel active">
-      <div class="bedroom-panel-main-img">
-        <img src="img/suite-1-loft-bedroom.jpeg" alt="Suite 1 - foto principal">
+    <div class="bedroom-panels">
+      <div class="bedroom-panel active">
+        <div class="bedroom-panel-main-img">
+          <img src="img/suite-1-loft-bedroom.jpeg" alt="Suite 1 - foto principal">
+        </div>
+        <div class="bedroom-panel-col">
+          <img src="img/suite-1-loft-kitchen.jpeg" alt="Suite 1 - foto 2">
+          <img src="img/suite-1-loft-ground-view.jpeg" alt="Suite 1 - foto 3">
+          <img src="img/suite-1-loft-shower.jpeg" alt="Suite 1 - foto 4">
+          <img src="img/terraza-jardinera.jpeg" alt="Suite 1 - foto 5">
+        </div>
+        <div class="bedroom-info">
+          <h3>Loft Bedroom · 1</h3>
+          <p>Spacious with a kitchennette, dining table, King size bed, terrace and bathroom. Mexican colors and
+            talavera tile.</p>
+        </div>
       </div>
-      <div class="bedroom-panel-col">
-        <img src="img/suite-1-loft-kitchen.jpeg" alt="Suite 1 - foto 2">
-        <img src="img/suite-1-loft-ground-view.jpeg" alt="Suite 1 - foto 3">
-        <img src="img/suite-1-loft-shower.jpeg" alt="Suite 1 - foto 4">
-        <img src="img/terraza-jardinera.jpeg" alt="Suite 1 - foto 5">
+      <div class="bedroom-panel">
+        <div class="bedroom-panel-main-img">
+          <img src="img/suite-2-loft-bedroom.jpeg" alt="Suite 2 - foto principal">
+        </div>
+        <div class="bedroom-panel-col">
+          <img src="img/suite-2-dinning-living-room.jpeg" alt="Suite 2 - foto 2">
+          <img src="img/suite-2-loft-dinning-living-room-view.jpeg" alt="Suite 2 - foto 3">
+          <img src="img/suite-2-loft-sofa-cama.jpeg" alt="Suite 2 - foto 4">
+          <img src="img/terraza-jardinera.jpeg" alt="Suite 2 - foto 5">
+        </div>
+        <div class="bedroom-info">
+          <h3>Loft Bedroom · 2</h3>
+          <p>Spacious with a kitchennette, dining table, King size bed, terrace and bathroom. Mexican vibrant and warm
+            tones and handmade talavera tiles</p>
+        </div>
       </div>
-      <div class="bedroom-info">
-        <h3>Loft Bedroom · 1</h3>
-        <p>Spacious with a kitchennette, dining table, King size bed, terrace and bathroom. Mexican colors and talavera tile.</p>
+      <div class="bedroom-panel">
+        <div class="bedroom-panel-main-img">
+          <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto principal">
+        </div>
+        <div class="bedroom-panel-col">
+          <img src="img/suite-3-loft-bedroom.jpeg" alt="Suite 3 - foto 2">
+          <img src="img/suite-3-loft-down-view.jpeg" alt="Suite 3 - foto 3">
+          <img src="img/suite-3-kitchenet-view.jpeg" alt="Suite 3 - foto 4">
+          <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto 5">
+        </div>
+        <div class="bedroom-info">
+          <h3>Loft Bedroom · 3</h3>
+          <p>Spacious with a kitchennette, dining table, matrimonial bed and bathroom with closet. Mexican colors and
+            travertino tile</p>
+        </div>
+      </div>
+      <div class="bedroom-panel">
+        <div class="bedroom-panel-main-img">
+          <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto principal">
+        </div>
+        <div class="bedroom-panel-col">
+          <img src="img/suite-4-loft-dinning-kitchen.jpeg" alt="Suite 4 - foto 2">
+          <img src="img/suite-4-loft-kitchen view.jpeg" alt="Suite 4 - foto 3">
+          <img src="img/suite-4-loft-down-view.jpeg" alt="Suite 4 - foto 4">
+          <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto 5">
+        </div>
+        <div class="bedroom-info">
+          <h3>Loft bedroom 4</h3>
+          <p>SSpacious with a kitchennette, dining table, matrimonial bed and bathroom with closet. Mexican vibrant
+            colors and travertino tile</p>
+        </div>
+      </div>
+      <div class="bedroom-panel">
+        <div class="bedroom-panel-main-img">
+          <img src="img/suite-5-planta-baja-bed-view.jpeg" alt="Suite 5 - foto principal">
+        </div>
+        <div class="bedroom-panel-col">
+          <img src="img/suite-5-planta-baja-comedor-view.jpeg" alt="Suite 5 - foto 2">
+          <img src="img/suite-5-planta-baja-bathroom.jpeg" alt="Suite 5 - foto 3">
+          <img src="img/suite-5-planta-baja-view.jpeg" alt="Suite 5 - foto 4">
+          <img src="img/suite-5-planta-baja-bed.jpeg" alt="Suite 5 - foto 5">
+        </div>
+        <div class="bedroom-info">
+          <h3>Bedroom 1st lvl · 5</h3>
+          <p>On the first level with a kitchennette, dining table, King size bed and bathroom with closet. Mexican
+            colors</p>
+        </div>
+      </div>
+      <div class="bedroom-panel">
+        <div class="bedroom-panel-main-img">
+          <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto principal">
+        </div>
+        <div class="bedroom-panel-col">
+          <img src="img/suite-6-planta-baja-bathroom.jpeg" alt="Suite 6 - foto 2">
+          <img src="img/suite-6-planta-baja-kitchenet-view.jpeg" alt="Suite 6 - foto 3">
+          <img src="img/suite-6-planta-baja-bed.jpeg" alt="Suite 6 - foto 4">
+          <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto 5">
+        </div>
+        <div class="bedroom-info">
+          <h3>Bedroom 1st lvl · 6</h3>
+          <p>SOn the first level with a kitchennette, dining table, King size bed and bathroom. Mexican colors</p>
+        </div>
       </div>
     </div>
-    <div class="bedroom-panel">
-      <div class="bedroom-panel-main-img">
-        <img src="img/suite-2-loft-bedroom.jpeg" alt="Suite 2 - foto principal">
-      </div>
-      <div class="bedroom-panel-col">
-        <img src="img/suite-2-dinning-living-room.jpeg" alt="Suite 2 - foto 2">
-        <img src="img/suite-2-loft-dinning-living-room-view.jpeg" alt="Suite 2 - foto 3">
-        <img src="img/suite-2-loft-sofa-cama.jpeg" alt="Suite 2 - foto 4">
-        <img src="img/terraza-jardinera.jpeg" alt="Suite 2 - foto 5">
-      </div>
-      <div class="bedroom-info">
-        <h3>Loft Bedroom · 2</h3>
-        <p>Spacious with a kitchennette, dining table, King size bed, terrace and bathroom. Mexican vibrant and warm tones and handmade talavera tiles</p>
-      </div>
-    </div>
-    <div class="bedroom-panel">
-      <div class="bedroom-panel-main-img">
-        <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto principal">
-      </div>
-      <div class="bedroom-panel-col">
-        <img src="img/suite-3-loft-bedroom.jpeg" alt="Suite 3 - foto 2">
-        <img src="img/suite-3-loft-down-view.jpeg" alt="Suite 3 - foto 3">
-        <img src="img/suite-3-kitchenet-view.jpeg" alt="Suite 3 - foto 4">
-        <img src="img/suite-3-loft-front-view.jpeg" alt="Suite 3 - foto 5">
-      </div>
-      <div class="bedroom-info">
-        <h3>Loft Bedroom · 3</h3>
-        <p>Spacious with a kitchennette, dining table, matrimonial bed and bathroom with closet. Mexican colors and travertino tile</p>
-      </div>
-    </div>
-    <div class="bedroom-panel">
-  <div class="bedroom-panel-main-img">
-    <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto principal">
-  </div>
-  <div class="bedroom-panel-col">
-    <img src="img/suite-4-loft-dinning-kitchen.jpeg" alt="Suite 4 - foto 2">
-    <img src="img/suite-4-loft-kitchen view.jpeg" alt="Suite 4 - foto 3">
-    <img src="img/suite-4-loft-down-view.jpeg" alt="Suite 4 - foto 4">
-    <img src="img/suite-4-loft-front-view.jpeg" alt="Suite 4 - foto 5">
-  </div>
-  <div class="bedroom-info">
-    <h3>Loft bedroom 4</h3>
-    <p>SSpacious with a kitchennette, dining table, matrimonial bed and bathroom with closet. Mexican vibrant colors and travertino tile</p>
-  </div>
-</div>
-  <div class="bedroom-panel">
-  <div class="bedroom-panel-main-img">
-    <img src="img/suite-5-planta-baja-bed-view.jpeg" alt="Suite 5 - foto principal">
-  </div>
-  <div class="bedroom-panel-col">
-    <img src="img/suite-5-planta-baja-comedor-view.jpeg" alt="Suite 5 - foto 2">
-    <img src="img/suite-5-planta-baja-bathroom.jpeg" alt="Suite 5 - foto 3">
-    <img src="img/suite-5-planta-baja-view.jpeg" alt="Suite 5 - foto 4">
-    <img src="img/suite-5-planta-baja-bed.jpeg" alt="Suite 5 - foto 5">
-  </div>
-  <div class="bedroom-info">
-    <h3>Bedroom 1st lvl · 5</h3>
-    <p>On the first level with a kitchennette, dining table, King size bed and bathroom with closet. Mexican colors</p>
-  </div>
-</div>
-<div class="bedroom-panel">
-  <div class="bedroom-panel-main-img">
-    <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto principal">
-  </div>
-  <div class="bedroom-panel-col">
-    <img src="img/suite-6-planta-baja-bathroom.jpeg" alt="Suite 6 - foto 2">
-    <img src="img/suite-6-planta-baja-kitchenet-view.jpeg" alt="Suite 6 - foto 3">
-    <img src="img/suite-6-planta-baja-bed.jpeg" alt="Suite 6 - foto 4">
-    <img src="img/suite-6-planta-baja-view.jpeg" alt="Suite 6 - foto 5">
-  </div>
-  <div class="bedroom-info">
-    <h3>Bedroom 1st lvl · 6</h3>
-    <p>SOn the first level with a kitchennette, dining table, King size bed and bathroom. Mexican colors</p>
-  </div>
-</div>
-  </div>
-</section>
+  </section>
 
-<!-- DIVIDER CALLOUT -->
-<div class="callout-divider">
-  <div class="callout-line"></div>
-  <p class="callout-text">Live Playa <em>Own a piece of paradise.</em></p>
-  <div class="callout-line"></div>
-</div>
+  <!-- DIVIDER CALLOUT -->
+  <div class="callout-divider">
+    <div class="callout-line"></div>
+    <p class="callout-text">Live Playa <em>Own a piece of paradise.</em></p>
+    <div class="callout-line"></div>
+  </div>
 
-<!-- ============================================================
+  <!-- ============================================================
      🖼️ GALERÍA MOSAICO — Grid de fotos decorativo
      CAMBIAR: reemplaza los src="..." con tus mejores fotos
      Las fotos con class="span2" ocupan el doble de ancho
-     ============================================================ -->
-<div class="gallery">
-  <div class="mosaic">
-    <img class="span2" src="img/alberca-deeck-1.jpeg" alt="Pool area">
+     ============================================================ 
+  <div class="gallery">
+    <div class="mosaic">
+      <img class="span2" src="img/alberca-deeck-1.jpeg" alt="Pool area">
     <img src="img/suite-1-loft-bathroom.jpeg" alt="Bathroom detail">
     <img src="img/suite-5-planta-baja-bathroom.jpeg" alt="Bathroom 2">
     <img src="img/suite-1-loft-ground-view.jpeg" alt="Loft staircase">
-    <img src="img/suite-2-loft-dinning-living-room-view.jpeg" alt="Loft view">
-    <img class="span2" src="img/foto-aerea-frontal.jpeg" alt="Aerial exterior">
-  </div>
-</div>
+    <img src="img/suite-2-loft-dinning-living-room-view.jpeg" alt="Loft view"> 
+      <img class="span2" src="img/foto-aerea-frontal.jpeg" alt="Aerial exterior">
+    </div>
+  </div>-->
 
-<!-- ============================================================
+  <!-- ============================================================
      ✨ AMENIDADES — Iconos con descripción de características
      CAMBIAR: icono (emoji), título y descripción de cada amenidad
      Para agregar más: copia un bloque <div class="amenity-item">
      ============================================================ -->
-<section class="amenities" id="amenities">
-  <p class="section-label">AMENITIES</p>
-  <h2 class="section-title">An Exceptional Place to Live</h2>
-  <div class="divider"></div>
-  <div class="amenities-layout">
-    <div class="amenities-grid">
+  <section class="amenities" id="amenities">
+    <p class="section-label">AMENITIES</p>
+    <h2 class="section-title">An Exceptional Place to Live</h2>
+    <div class="divider"></div>
+    <div class="amenities-layout">
+      <div class="amenities-grid">
 
-      <div class="amenity-item">
-        <div class="amenity-icon">🔒</div>
-        <div>
-          <div class="amenity-title">GATED SECURITY 24/7</div>
-          <div class="amenity-desc">Playacar is a fully gated luxury development with controlled access and 24/7 security — home to Playa del Carmen's finest resort hotels.</div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🔒</div>
+          <div>
+            <div class="amenity-title">GATED SECURITY 24/7</div>
+            <div class="amenity-desc">Playacar is a fully gated luxury development with controlled access and 24/7
+              security — home to Playa del Carmen's finest resort hotels.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="amenity-item">
-        <div class="amenity-icon">⛳</div>
-        <div>
-          <div class="amenity-title">ROBERT VON HAGGE'S GOLF COURSE</div>
-          <div class="amenity-desc">Robert von Hagge's championship design winds through tropical jungle with tight fairways, water hazards, and tough bunkers — a true test in paradise.</div>
+        <div class="amenity-item">
+          <div class="amenity-icon">⛳</div>
+          <div>
+            <div class="amenity-title">ROBERT VON HAGGE'S GOLF COURSE</div>
+            <div class="amenity-desc">Robert von Hagge's championship design winds through tropical jungle with tight
+              fairways, water hazards, and tough bunkers — a true test in paradise.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="amenity-item">
-        <div class="amenity-icon">🏖️</div>
-        <div>
-          <div class="amenity-title">PRIVATE BEACH CLUB</div>
-          <div class="amenity-desc">Owners enjoy exclusive access to the Playacar Beach Club on the Caribbean — just a 5-minute walk from the property.</div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🏖️</div>
+          <div>
+            <div class="amenity-title">PRIVATE BEACH CLUB</div>
+            <div class="amenity-desc">Owners enjoy exclusive access to the Playacar Beach Club on the Caribbean — just a
+              5-minute walk from the property.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="amenity-item">
-        <div class="amenity-icon">☀️</div>
-        <div>
-          <div class="amenity-title">SOLAR PANELS</div>
-          <div class="amenity-desc">Property includes installed solar panels, significantly reducing energy costs and improving sustainability.</div>
+        <div class="amenity-item">
+          <div class="amenity-icon">☀️</div>
+          <div>
+            <div class="amenity-title">SOLAR PANELS</div>
+            <div class="amenity-desc">Property includes installed solar panels, significantly reducing energy costs and
+              improving sustainability.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="amenity-item">
-        <div class="amenity-icon">🚗</div>
-        <div>
-          <div class="amenity-title">PARKING FOR 4 CARS</div>
-          <div class="amenity-desc">Private parking for up to 4 vehicles within the property.</div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🚗</div>
+          <div>
+            <div class="amenity-title">PARKING FOR 4 CARS</div>
+            <div class="amenity-desc">Private parking for up to 4 vehicles within the property.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="amenity-item">
-        <div class="amenity-icon">🛣️</div>
-        <div>
-          <div class="amenity-title">CANCÚN–TULUM HIGHWAY</div>
-          <div class="amenity-desc">Direct access to the federal Cancún–Tulum highway — connecting you to the entire Riviera Maya corridor.</div>
+        <div class="amenity-item">
+          <div class="amenity-icon">🛣️</div>
+          <div>
+            <div class="amenity-title">CANCÚN–TULUM HIGHWAY</div>
+            <div class="amenity-desc">Direct access to the federal Cancún–Tulum highway — connecting you to the entire
+              Riviera Maya corridor.</div>
+          </div>
         </div>
-      </div>
 
+      </div>
+      <div class="amenities-right">
+        <img src="img/portada_aerea.jpeg">
+      </div>
     </div>
-    <div class="amenities-right">
-      <img src="img/portada_aerea.jpeg">
-    </div>
-  </div>
-</section>
-<!-- ============================================================
+  </section>
+  <!-- ============================================================
      📍 UBICACIÓN — Texto con distancias + mapa de Google
      CAMBIAR: distancias y descripciones en la lista
      MAPA: el iframe de Google Maps no carga en local,
@@ -701,101 +1281,129 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
      Para personalizar el mapa, genera tu embed en:
      maps.google.com → Compartir → Insertar mapa
      ============================================================ -->
-<section class="location" id="location">
-  <div class="location-grid">
-    <div>
-      <p class="section-label">Location</p>
-      <h2 class="section-title">Great Location</h2>
-      <div class="divider"></div>
-      <ul class="location-items">
-        <li class="location-item">
-          <div class="location-dist">5'</div>
-          <div><div class="location-name">Caribbean Beach</div><div class="location-desc">Walking distance to the most beautiful beach</div></div>
-        </li>
-        <li class="location-item">
-          <div class="location-dist">10'</div>
-          <div><div class="location-name">5th Avenue</div><div class="location-desc">Walking distance to 5th Avenue. Shopping, dining & nightlife — Playa del Carmen's iconic pedestrian strip</div></div>
-        </li>
-        <li class="location-item">
-          <div class="location-dist">⛳</div>
-          <div><div class="location-name">Robert von Hagge's Golf Course</div><div class="location-desc">Championship course inside Playacar development</div></div>
-        </li>
-        <li class="location-item">
-          <div class="location-dist">🏖️</div>
-          <div><div class="location-name">Playacar Beach Club</div><div class="location-desc">Exclusive access to the private beach club</div></div>
-        </li>
-        <li class="location-item">
-          <div class="location-dist">🛣️</div>
-          <div><div class="location-name">Cancun-Tulum Highway</div><div class="location-desc">Direct highway access from the development</div></div>
-        </li>
-      </ul>
+  <section class="location" id="location">
+    <div class="location-grid">
+      <div>
+        <p class="section-label">Location</p>
+        <h2 class="section-title">Great Location</h2>
+        <div class="divider"></div>
+        <ul class="location-items">
+          <li class="location-item">
+            <div class="location-dist">5'</div>
+            <div>
+              <div class="location-name">Caribbean Beach</div>
+              <div class="location-desc">Walking distance to the most beautiful beach</div>
+            </div>
+          </li>
+          <li class="location-item">
+            <div class="location-dist">10'</div>
+            <div>
+              <div class="location-name">5th Avenue</div>
+              <div class="location-desc">Walking distance to 5th Avenue. Shopping, dining & nightlife — Playa del
+                Carmen's iconic pedestrian strip</div>
+            </div>
+          </li>
+          <!-- <li class="location-item">
+            <div class="location-dist">⛳</div>
+            <div>
+              <div class="location-name">Robert von Hagge's Golf Course</div>
+              <div class="location-desc">Championship course inside Playacar development</div>
+            </div>
+          </li>
+          <li class="location-item">
+            <div class="location-dist">🏖️</div>
+            <div>
+              <div class="location-name">Playacar Beach Club</div>
+              <div class="location-desc">Exclusive access to the private beach club</div>
+            </div>
+          </li>-->
+          <li class="location-item">
+            <div class="location-dist">🛣️</div>
+            <div>
+              <div class="location-name">Cancun-Tulum Highway</div>
+              <div class="location-desc">Direct highway access from the development</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <iframe class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.0!2d-87.0819!3d20.6129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4327b4d2f7f5%3A0x0!2sAv+Xaman+Ha+16%2C+Playacar%2C+Playa+del+Carmen!5e0!3m2!1sen!2smx!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
-    <div>
-      <iframe
-        class="map-embed"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.0!2d-87.0819!3d20.6129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4327b4d2f7f5%3A0x0!2sAv+Xaman+Ha+16%2C+Playacar%2C+Playa+del+Carmen!5e0!3m2!1sen!2smx!4v1"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      📞 CONTACTO — Página final con precio y datos del agente
      CAMBIAR: precio, nombre del agente, teléfono, email, web
      El botón "Agendar Visita" puedes linkear a WhatsApp así:
      href="https://wa.me/521TUNUMERO"
      ============================================================ -->
-<section class="contact" id="contact">
-  <p class="section-label">Contact</p>
-  <h2 class="section-title">Schedule a Visit</h2>
-  <div class="divider"></div>
-  <!-- <div class="contact-price">USD $1,850,000</div> 
+  <section class="contact" id="contact">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">Schedule a Visit</h2>
+    <div class="divider"></div>
+    <!-- <div class="contact-price">USD $1,850,000</div> 
   <p class="contact-price-label">Precio de Venta</p>-->
-  <div class="contact-box">
-    <div class="contact-name">Jorge Fuentes</div>
-    <!-- <div class="contact-role">Asesor Inmobiliario</div> -->
-    <div class="contact-field">📞 &nbsp;+52 984 116 89 98</div>
-    <div class="contact-field">✉️ &nbsp;controldeobramex@gmail.com</div>
-    <!-- <div class="contact-field" style="border-bottom:none; margin-bottom:0;">🌐 &nbsp;[Website]</div> -->
-  </div>
-  <br>
-  <a class="contact-cta" href="#">Schedule a Visit</a>
-</section>
+    <div class="contact-box">
+      <div class="contact-name">Jorge Fuentes</div>
+      <!-- <div class="contact-role">Asesor Inmobiliario</div> -->
+      <div class="contact-field"><a href="tel:+529841168998"
+          style="color:rgba(255,255,255,0.45); text-decoration:none;">
+          📞 +52 984 116 89 98
+        </a></div>
+      <div class="contact-field"><a href="mailto:controldeobramex@gmail.com"
+          style="color:rgba(255,255,255,0.45); text-decoration:none;">
+          ✉️ controldeobramex@gmail.com
+        </a></div>
+      <!-- <div class="contact-field" style="border-bottom:none; margin-bottom:0;">🌐 &nbsp;[Website]</div> -->
+    </div>
+    <br>
+    <a class="contact-cta"
+      href="https://wa.me/529841168998?text=Hi!%20I%27m%20interested%20in%20the%20Playacar%20Estate%20property%20and%20would%20like%20to%20schedule%20a%20visit."
+      target="_blank">
+      Schedule a Visit
+    </a>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      🔻 FOOTER — Barra inferior con dirección y derechos
      CAMBIAR: dirección y texto de derechos reservados
      ============================================================ -->
-<div style="background:#0f0e0b; padding:22px 8%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid rgba(255,255,255,0.06);">
-  <span style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.25);">Playacar Estate · Av. Xaman Ha 16 · Playa del Carmen, Quintana Roo, México</span>
-  <span style="font-size:10px; color:rgba(255,255,255,0.15);">Todos los derechos reservados</span>
-</div>
+  <div
+    style="background:#0f0e0b; padding:22px 8%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-top:1px solid rgba(255,255,255,0.06);">
+    <span style="font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.25);">Playacar
+      Estate · Av. Xaman Ha 16 · Playa del Carmen, Quintana Roo, México</span>
+    <span style="font-size:10px; color:rgba(255,255,255,0.15);">Todos los derechos reservados</span>
+  </div>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      ⚙️ JAVASCRIPT — Lógica de los tabs de recámaras
      No necesitas cambiar nada aquí a menos que agregues
      o quites suites en la sección de recámaras
      ============================================================ -->
-<script>
-function showBedroom(index, btn) {
-  document.querySelectorAll('.bedroom-panel').forEach((p,i) => p.classList.toggle('active', i === index));
-  document.querySelectorAll('.bedroom-tab').forEach((t,i) => t.classList.toggle('active', i === index));
-}
+  <script>
+    function showBedroom(index, btn) {
+      document.querySelectorAll('.bedroom-panel').forEach((p, i) => p.classList.toggle('active', i === index));
+      document.querySelectorAll('.bedroom-tab').forEach((t, i) => t.classList.toggle('active', i === index));
+    }
 
-// ⛳ CARRUSEL GOLF
-let currentSlide = 0;
-const autoPlay = setInterval(() => {
-  currentSlide = (currentSlide + 1) % 4;
-  goToSlide(currentSlide);
-}, 4000);
+    // ⛳ CARRUSEL GOLF
+    let currentSlide = 0;
+    const autoPlay = setInterval(() => {
+      currentSlide = (currentSlide + 1) % 4;
+      goToSlide(currentSlide);
+    }, 4000);
 
-function goToSlide(n) {
-  document.querySelectorAll('.golf-slide').forEach((s,i) => s.classList.toggle('active', i === n));
-  document.querySelectorAll('.golf-dot').forEach((d,i) => d.classList.toggle('active', i === n));
-  currentSlide = n;
-}
-</script>
+    function goToSlide(n) {
+      document.querySelectorAll('.golf-slide').forEach((s, i) => s.classList.toggle('active', i === n));
+      document.querySelectorAll('.golf-dot').forEach((d, i) => d.classList.toggle('active', i === n));
+      currentSlide = n;
+    }
+  </script>
 </body>
+
 </html>
