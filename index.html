@@ -860,6 +860,52 @@
       .photo-strip img:nth-child(4) {
         display: none;
       }
+
+      .photo-strip {
+        grid-template-columns: 1fr;
+        height: 350px;
+      }
+
+      .photo-strip img:nth-child(2),
+      .photo-strip img:nth-child(3),
+      .photo-strip img:nth-child(4) {
+        display: none;
+      }
+
+      /* ← AGREGA AQUÍ ABAJO */
+      .bedroom-panel.active {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        height: auto;
+      }
+
+      .bedroom-panel-main-img {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        height: 280px;
+      }
+
+      .bedroom-panel-col {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: 180px;
+      }
+
+      .bedroom-panel-col img:nth-child(3),
+      .bedroom-panel-col img:nth-child(4),
+      .bedroom-panel-col img:nth-child(5) {
+        display: none;
+      }
+
+      .bedroom-info {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        height: auto;
+      }
+
+
     }
   </style>
 </head>
@@ -1034,6 +1080,12 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
           <div class="golf-slide">
             <img src="img/golf_foto4.jpg" alt="Playacar Golf Course - hole 4">
           </div>
+          <div class="golf-slide">
+            <img src="img/golf_foto5.jpeg" alt="Playacar Golf Course - hole 4">
+          </div>
+          <div class="golf-slide">
+            <img src="img/golf_foto6.jpeg" alt="Playacar Golf Course - hole 4">
+          </div>
         </div>
         <!-- Dots -->
         <div class="golf-dots">
@@ -1041,6 +1093,8 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
           <span class="golf-dot" onclick="goToSlide(1)"></span>
           <span class="golf-dot" onclick="goToSlide(2)"></span>
           <span class="golf-dot" onclick="goToSlide(3)"></span>
+          <span class="golf-dot" onclick="goToSlide(4)"></span>
+          <span class="golf-dot" onclick="goToSlide(5)"></span>
         </div>
       </div>
       <div class="pool-text">
@@ -1269,7 +1323,7 @@ solo renómbralos como aparece arriba y ponlos en la carpeta img/
 
       </div>
       <div class="amenities-right">
-        <img src="img/portada_aerea.jpeg">
+        <img src="img/foto-aerea-frontal.jpeg">
       </div>
     </div>
   </section>
